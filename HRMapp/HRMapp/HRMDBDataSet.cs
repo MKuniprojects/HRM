@@ -14,6 +14,8 @@ namespace HRMapp.HRMDBDataSetTableAdapters
 {
     partial class PersonsTableAdapter
     {
+       
+
     }
 
     public partial class UsersTableAdapter {

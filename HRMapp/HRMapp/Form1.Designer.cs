@@ -28,266 +28,465 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.HR = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Department = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxGender = new System.Windows.Forms.ComboBox();
+            this.brs = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtadr = new System.Windows.Forms.TextBox();
+            this.txtmail = new System.Windows.Forms.TextBox();
+            this.txtnum = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Lastname = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtlname = new System.Windows.Forms.TextBox();
+            this.update = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.txtfname = new System.Windows.Forms.TextBox();
+            this.profile = new System.Windows.Forms.PictureBox();
+            this.btnempadd = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.hrmdbDataSet1 = new HRMapp.HRMDBDataSet();
+            this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
+            this.personsTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.PersonsTableAdapter();
             this.panel1.SuspendLayout();
-            this.HR.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hrmdbDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.DarkBlue;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.HR);
+            this.panel1.Controls.Add(this.Department);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btnempadd);
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1153, 599);
+            this.panel1.Size = new System.Drawing.Size(861, 500);
             this.panel1.TabIndex = 0;
             // 
-            // HR
+            // Department
             // 
-            this.HR.Controls.Add(this.tabPage1);
-            this.HR.Controls.Add(this.tabPage2);
-            this.HR.Controls.Add(this.tabPage3);
-            this.HR.Location = new System.Drawing.Point(16, 13);
-            this.HR.Name = "HR";
-            this.HR.SelectedIndex = 0;
-            this.HR.Size = new System.Drawing.Size(1114, 566);
-            this.HR.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.AutoScroll = true;
-            this.tabPage1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.tabPage1.Controls.Add(this.monthCalendar1);
-            this.tabPage1.Controls.Add(this.pictureBox3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1106, 537);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Home";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1106, 537);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Organization";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.panel2);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.pictureBox1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1106, 537);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Employees";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1100, 90);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1100, 90);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1100, 90);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 74);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "New Employee";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(130, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 73);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Employee List";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Department.Enabled = false;
+            this.Department.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Department.Location = new System.Drawing.Point(34, 16);
+            this.Department.Name = "Department";
+            this.Department.Size = new System.Drawing.Size(208, 34);
+            this.Department.TabIndex = 7;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.comboBoxGender);
+            this.panel2.Controls.Add(this.brs);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.txtadr);
+            this.panel2.Controls.Add(this.txtmail);
+            this.panel2.Controls.Add(this.txtnum);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.Lastname);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.txtlname);
+            this.panel2.Controls.Add(this.update);
             this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Location = new System.Drawing.Point(658, 115);
+            this.panel2.Controls.Add(this.txtfname);
+            this.panel2.Controls.Add(this.profile);
+            this.panel2.Location = new System.Drawing.Point(397, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(425, 408);
+            this.panel2.Size = new System.Drawing.Size(417, 403);
             this.panel2.TabIndex = 3;
             // 
-            // monthCalendar1
+            // dateTimePicker1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(844, 96);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 2;
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Birthdate", true));
+            this.dateTimePicker1.Location = new System.Drawing.Point(270, 105);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(131, 22);
+            this.dateTimePicker1.TabIndex = 18;
+            this.dateTimePicker1.Value = new System.DateTime(2017, 2, 4, 0, 0, 0, 0);
             // 
-            // button3
+            // comboBoxGender
             // 
-            this.button3.Location = new System.Drawing.Point(255, 7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 73);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Performance";
-            this.button3.UseVisualStyleBackColor = true;
+            this.comboBoxGender.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.bindingSource1, "Gender", true));
+            this.comboBoxGender.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bindingSource1, "Gender", true));
+            this.comboBoxGender.FormattingEnabled = true;
+            this.comboBoxGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Ginger",
+            "Trans",
+            "No Gender fuck off",
+            "duck"});
+            this.comboBoxGender.Location = new System.Drawing.Point(270, 77);
+            this.comboBoxGender.Name = "comboBoxGender";
+            this.comboBoxGender.Size = new System.Drawing.Size(131, 24);
+            this.comboBoxGender.TabIndex = 7;
             // 
-            // pictureBox4
+            // brs
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(24, 23);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(115, 119);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.brs.Location = new System.Drawing.Point(17, 215);
+            this.brs.Name = "brs";
+            this.brs.Size = new System.Drawing.Size(160, 34);
+            this.brs.TabIndex = 17;
+            this.brs.Text = "Browse";
+            this.brs.UseVisualStyleBackColor = true;
+            this.brs.Click += new System.EventHandler(this.brs_Click);
             // 
-            // textBox1
+            // label6
             // 
-            this.textBox1.Location = new System.Drawing.Point(178, 23);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 118);
-            this.textBox1.TabIndex = 1;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(212, 192);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Adress";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(222, 164);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 17);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Email";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(187, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 17);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Ph.number";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(199, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Birthdate";
+            // 
+            // txtadr
+            // 
+            this.txtadr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Adress", true));
+            this.txtadr.Location = new System.Drawing.Point(270, 192);
+            this.txtadr.Multiline = true;
+            this.txtadr.Name = "txtadr";
+            this.txtadr.Size = new System.Drawing.Size(131, 57);
+            this.txtadr.TabIndex = 12;
+            // 
+            // txtmail
+            // 
+            this.txtmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Mail", true));
+            this.txtmail.Location = new System.Drawing.Point(270, 161);
+            this.txtmail.Name = "txtmail";
+            this.txtmail.Size = new System.Drawing.Size(131, 22);
+            this.txtmail.TabIndex = 11;
+            // 
+            // txtnum
+            // 
+            this.txtnum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Phonenumber", true));
+            this.txtnum.Location = new System.Drawing.Point(270, 133);
+            this.txtnum.MaxLength = 10;
+            this.txtnum.Name = "txtnum";
+            this.txtnum.Size = new System.Drawing.Size(131, 22);
+            this.txtnum.TabIndex = 10;
+            this.txtnum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnum_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(208, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Gender";
+            // 
+            // Lastname
+            // 
+            this.Lastname.AutoSize = true;
+            this.Lastname.Location = new System.Drawing.Point(194, 54);
+            this.Lastname.Name = "Lastname";
+            this.Lastname.Size = new System.Drawing.Size(70, 17);
+            this.Lastname.TabIndex = 7;
+            this.Lastname.Text = "Lastname";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(194, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Firstname";
+            // 
+            // txtlname
+            // 
+            this.txtlname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Lastname", true));
+            this.txtlname.Location = new System.Drawing.Point(270, 51);
+            this.txtlname.Name = "txtlname";
+            this.txtlname.Size = new System.Drawing.Size(131, 22);
+            this.txtlname.TabIndex = 4;
+            // 
+            // update
+            // 
+            this.update.Location = new System.Drawing.Point(270, 262);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(131, 37);
+            this.update.TabIndex = 3;
+            this.update.Text = "Update";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(25, 224);
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(17, 323);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(375, 162);
+            this.textBox2.Size = new System.Drawing.Size(384, 61);
             this.textBox2.TabIndex = 2;
             // 
-            // button4
+            // txtfname
             // 
-            this.button4.Location = new System.Drawing.Point(24, 148);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 37);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.txtfname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Firstname", true));
+            this.txtfname.Location = new System.Drawing.Point(270, 23);
+            this.txtfname.Name = "txtfname";
+            this.txtfname.Size = new System.Drawing.Size(131, 22);
+            this.txtfname.TabIndex = 1;
             // 
-            // button5
+            // profile
             // 
-            this.button5.Location = new System.Drawing.Point(178, 148);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(222, 36);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.profile.Location = new System.Drawing.Point(17, 21);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(160, 188);
+            this.profile.TabIndex = 0;
+            this.profile.TabStop = false;
+            // 
+            // btnempadd
+            // 
+            this.btnempadd.Location = new System.Drawing.Point(697, 16);
+            this.btnempadd.Name = "btnempadd";
+            this.btnempadd.Size = new System.Drawing.Size(117, 34);
+            this.btnempadd.TabIndex = 6;
+            this.btnempadd.Text = "Add Employee";
+            this.btnempadd.UseVisualStyleBackColor = true;
+            this.btnempadd.Click += new System.EventHandler(this.btnempadd_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.personIDDataGridViewTextBoxColumn,
+            this.firstnameDataGridViewTextBoxColumn,
+            this.lastnameDataGridViewTextBoxColumn,
+            this.phonenumberDataGridViewTextBoxColumn,
+            this.adressDataGridViewTextBoxColumn,
+            this.mailDataGridViewTextBoxColumn,
+            this.birthdateDataGridViewTextBoxColumn,
+            this.genderDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.bindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(34, 63);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(344, 403);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 303);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 17);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "ΑΞΙΟΛΟΓΗΣΗ";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Persons";
+            this.bindingSource1.DataSource = this.hrmdbDataSet1;
+            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
+            // hrmdbDataSet1
+            // 
+            this.hrmdbDataSet1.DataSetName = "HRMDBDataSet";
+            this.hrmdbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // personIDDataGridViewTextBoxColumn
+            // 
+            this.personIDDataGridViewTextBoxColumn.DataPropertyName = "PersonID";
+            this.personIDDataGridViewTextBoxColumn.FillWeight = 30F;
+            this.personIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
+            this.personIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.personIDDataGridViewTextBoxColumn.Visible = false;
+            this.personIDDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // firstnameDataGridViewTextBoxColumn
+            // 
+            this.firstnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "Firstname";
+            this.firstnameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastnameDataGridViewTextBoxColumn
+            // 
+            this.lastnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "Lastname";
+            this.lastnameDataGridViewTextBoxColumn.HeaderText = "Lastname";
+            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phonenumberDataGridViewTextBoxColumn
+            // 
+            this.phonenumberDataGridViewTextBoxColumn.DataPropertyName = "Phonenumber";
+            this.phonenumberDataGridViewTextBoxColumn.HeaderText = "Phonenumber";
+            this.phonenumberDataGridViewTextBoxColumn.Name = "phonenumberDataGridViewTextBoxColumn";
+            this.phonenumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phonenumberDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // adressDataGridViewTextBoxColumn
+            // 
+            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
+            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
+            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
+            this.adressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.adressDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // mailDataGridViewTextBoxColumn
+            // 
+            this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
+            this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
+            this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            this.mailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mailDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // birthdateDataGridViewTextBoxColumn
+            // 
+            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
+            this.birthdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.birthdateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.genderDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // personsTableAdapter
+            // 
+            this.personsTableAdapter.ClearBeforeFill = true;
             // 
             // Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1153, 599);
+            this.ClientSize = new System.Drawing.Size(861, 500);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "Home";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
-            this.HR.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hrmdbDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+   
+        private HRMDBDataSet hrmdbDataSet1;
+        private HRMDBDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private HRMDBDataSetTableAdapters.PersonsTableAdapter personsTableAdapter;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl HR;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnempadd;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBoxGender;
+        private System.Windows.Forms.Button brs;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtadr;
+        private System.Windows.Forms.TextBox txtmail;
+        private System.Windows.Forms.TextBox txtnum;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Lastname;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtlname;
+        private System.Windows.Forms.Button update;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtfname;
+        private System.Windows.Forms.PictureBox profile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phonenumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox Department;
+        private System.Windows.Forms.Label label7;
     }
 }
 

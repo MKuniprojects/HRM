@@ -355,17 +355,23 @@ namespace HRMapp {
             
             private global::System.Data.DataColumn columnLastname;
             
-            private global::System.Data.DataColumn columnPhonenumber;
-            
             private global::System.Data.DataColumn columnAdress;
             
             private global::System.Data.DataColumn columnMail;
             
-            private global::System.Data.DataColumn columnBirthdate;
-            
             private global::System.Data.DataColumn columnPhotoprofile;
             
             private global::System.Data.DataColumn columnJobID;
+            
+            private global::System.Data.DataColumn columnGender;
+            
+            private global::System.Data.DataColumn columnBirthdate;
+            
+            private global::System.Data.DataColumn columnDepartment;
+            
+            private global::System.Data.DataColumn columnPhonenumber;
+            
+            private global::System.Data.DataColumn columnEvaluation;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -426,14 +432,6 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PhonenumberColumn {
-                get {
-                    return this.columnPhonenumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn AdressColumn {
                 get {
                     return this.columnAdress;
@@ -450,14 +448,6 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BirthdateColumn {
-                get {
-                    return this.columnBirthdate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn PhotoprofileColumn {
                 get {
                     return this.columnPhotoprofile;
@@ -469,6 +459,46 @@ namespace HRMapp {
             public global::System.Data.DataColumn JobIDColumn {
                 get {
                     return this.columnJobID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GenderColumn {
+                get {
+                    return this.columnGender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BirthdateColumn {
+                get {
+                    return this.columnBirthdate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DepartmentColumn {
+                get {
+                    return this.columnDepartment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PhonenumberColumn {
+                get {
+                    return this.columnPhonenumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EvaluationColumn {
+                get {
+                    return this.columnEvaluation;
                 }
             }
             
@@ -509,18 +539,21 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PersonsRow AddPersonsRow(long PersonID, string Firstname, string Lastname, int Phonenumber, string Adress, string Mail, string Birthdate, string Photoprofile, short JobID) {
+            public PersonsRow AddPersonsRow(string Firstname, string Lastname, string Adress, string Mail, byte[] Photoprofile, long JobID, string Gender, string Birthdate, short Department, string Phonenumber, string Evaluation) {
                 PersonsRow rowPersonsRow = ((PersonsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        PersonID,
+                        null,
                         Firstname,
                         Lastname,
-                        Phonenumber,
                         Adress,
                         Mail,
-                        Birthdate,
                         Photoprofile,
-                        JobID};
+                        JobID,
+                        Gender,
+                        Birthdate,
+                        Department,
+                        Phonenumber,
+                        Evaluation};
                 rowPersonsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPersonsRow);
                 return rowPersonsRow;
@@ -553,12 +586,15 @@ namespace HRMapp {
                 this.columnPersonID = base.Columns["PersonID"];
                 this.columnFirstname = base.Columns["Firstname"];
                 this.columnLastname = base.Columns["Lastname"];
-                this.columnPhonenumber = base.Columns["Phonenumber"];
                 this.columnAdress = base.Columns["Adress"];
                 this.columnMail = base.Columns["Mail"];
-                this.columnBirthdate = base.Columns["Birthdate"];
                 this.columnPhotoprofile = base.Columns["Photoprofile"];
                 this.columnJobID = base.Columns["JobID"];
+                this.columnGender = base.Columns["Gender"];
+                this.columnBirthdate = base.Columns["Birthdate"];
+                this.columnDepartment = base.Columns["Department"];
+                this.columnPhonenumber = base.Columns["Phonenumber"];
+                this.columnEvaluation = base.Columns["Evaluation"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -570,33 +606,37 @@ namespace HRMapp {
                 base.Columns.Add(this.columnFirstname);
                 this.columnLastname = new global::System.Data.DataColumn("Lastname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastname);
-                this.columnPhonenumber = new global::System.Data.DataColumn("Phonenumber", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhonenumber);
                 this.columnAdress = new global::System.Data.DataColumn("Adress", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdress);
                 this.columnMail = new global::System.Data.DataColumn("Mail", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMail);
+                this.columnPhotoprofile = new global::System.Data.DataColumn("Photoprofile", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhotoprofile);
+                this.columnJobID = new global::System.Data.DataColumn("JobID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJobID);
+                this.columnGender = new global::System.Data.DataColumn("Gender", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGender);
                 this.columnBirthdate = new global::System.Data.DataColumn("Birthdate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBirthdate);
-                this.columnPhotoprofile = new global::System.Data.DataColumn("Photoprofile", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhotoprofile);
-                this.columnJobID = new global::System.Data.DataColumn("JobID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnJobID);
+                this.columnDepartment = new global::System.Data.DataColumn("Department", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartment);
+                this.columnPhonenumber = new global::System.Data.DataColumn("Phonenumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhonenumber);
+                this.columnEvaluation = new global::System.Data.DataColumn("Evaluation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEvaluation);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPersonID}, true));
+                this.columnPersonID.AutoIncrement = true;
                 this.columnPersonID.AllowDBNull = false;
                 this.columnPersonID.Unique = true;
                 this.columnFirstname.MaxLength = 50;
                 this.columnLastname.MaxLength = 50;
-                this.columnPhonenumber.AllowDBNull = false;
-                this.columnAdress.AllowDBNull = false;
                 this.columnAdress.MaxLength = 70;
-                this.columnMail.AllowDBNull = false;
                 this.columnMail.MaxLength = 50;
-                this.columnBirthdate.AllowDBNull = false;
+                this.columnGender.MaxLength = 50;
                 this.columnBirthdate.MaxLength = 50;
-                this.columnPhotoprofile.AllowDBNull = false;
-                this.columnPhotoprofile.MaxLength = 50;
+                this.columnPhonenumber.MaxLength = 10;
+                this.columnEvaluation.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1027,6 +1067,10 @@ namespace HRMapp {
             
             private global::System.Data.DataColumn columnLoginPassword;
             
+            private global::System.Data.DataColumn columnPersonID1;
+            
+            private global::System.Data.DataColumn columnDpID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public UsersDataTable() {
@@ -1102,6 +1146,22 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PersonID1Column {
+                get {
+                    return this.columnPersonID1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DpIDColumn {
+                get {
+                    return this.columnDpID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1137,14 +1197,16 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UsersRow AddUsersRow(short UserID, short ProfessionID, short PersonID, string LoginName, string LoginPassword) {
+            public UsersRow AddUsersRow(short ProfessionID, short PersonID, string LoginName, string LoginPassword, string PersonID1, short DpID) {
                 UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        UserID,
+                        null,
                         ProfessionID,
                         PersonID,
                         LoginName,
-                        LoginPassword};
+                        LoginPassword,
+                        PersonID1,
+                        DpID};
                 rowUsersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsersRow);
                 return rowUsersRow;
@@ -1179,6 +1241,8 @@ namespace HRMapp {
                 this.columnPersonID = base.Columns["PersonID"];
                 this.columnLoginName = base.Columns["LoginName"];
                 this.columnLoginPassword = base.Columns["LoginPassword"];
+                this.columnPersonID1 = base.Columns["PersonID1"];
+                this.columnDpID = base.Columns["DpID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1194,12 +1258,19 @@ namespace HRMapp {
                 base.Columns.Add(this.columnLoginName);
                 this.columnLoginPassword = new global::System.Data.DataColumn("LoginPassword", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLoginPassword);
+                this.columnPersonID1 = new global::System.Data.DataColumn("PersonID1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPersonID1);
+                this.columnDpID = new global::System.Data.DataColumn("DpID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDpID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnUserID}, true));
+                this.columnUserID.AutoIncrement = true;
                 this.columnUserID.AllowDBNull = false;
                 this.columnUserID.Unique = true;
                 this.columnLoginName.MaxLength = 50;
                 this.columnLoginPassword.MaxLength = 50;
+                this.columnPersonID1.Caption = "PersonID";
+                this.columnPersonID1.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1385,20 +1456,14 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Phonenumber {
-                get {
-                    return ((int)(this[this.tablePersons.PhonenumberColumn]));
-                }
-                set {
-                    this[this.tablePersons.PhonenumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Adress {
                 get {
-                    return ((string)(this[this.tablePersons.AdressColumn]));
+                    try {
+                        return ((string)(this[this.tablePersons.AdressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Adress\' in table \'Persons\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePersons.AdressColumn] = value;
@@ -1409,7 +1474,12 @@ namespace HRMapp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Mail {
                 get {
-                    return ((string)(this[this.tablePersons.MailColumn]));
+                    try {
+                        return ((string)(this[this.tablePersons.MailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Mail\' in table \'Persons\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePersons.MailColumn] = value;
@@ -1418,20 +1488,14 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Birthdate {
+            public byte[] Photoprofile {
                 get {
-                    return ((string)(this[this.tablePersons.BirthdateColumn]));
-                }
-                set {
-                    this[this.tablePersons.BirthdateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Photoprofile {
-                get {
-                    return ((string)(this[this.tablePersons.PhotoprofileColumn]));
+                    try {
+                        return ((byte[])(this[this.tablePersons.PhotoprofileColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Photoprofile\' in table \'Persons\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePersons.PhotoprofileColumn] = value;
@@ -1440,10 +1504,10 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short JobID {
+            public long JobID {
                 get {
                     try {
-                        return ((short)(this[this.tablePersons.JobIDColumn]));
+                        return ((long)(this[this.tablePersons.JobIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'JobID\' in table \'Persons\' is DBNull.", e);
@@ -1451,6 +1515,86 @@ namespace HRMapp {
                 }
                 set {
                     this[this.tablePersons.JobIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Gender {
+                get {
+                    try {
+                        return ((string)(this[this.tablePersons.GenderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Gender\' in table \'Persons\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePersons.GenderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Birthdate {
+                get {
+                    try {
+                        return ((string)(this[this.tablePersons.BirthdateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Birthdate\' in table \'Persons\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePersons.BirthdateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short Department {
+                get {
+                    try {
+                        return ((short)(this[this.tablePersons.DepartmentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Department\' in table \'Persons\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePersons.DepartmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Phonenumber {
+                get {
+                    try {
+                        return ((string)(this[this.tablePersons.PhonenumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Phonenumber\' in table \'Persons\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePersons.PhonenumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Evaluation {
+                get {
+                    try {
+                        return ((string)(this[this.tablePersons.EvaluationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Evaluation\' in table \'Persons\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePersons.EvaluationColumn] = value;
                 }
             }
             
@@ -1480,6 +1624,42 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAdressNull() {
+                return this.IsNull(this.tablePersons.AdressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAdressNull() {
+                this[this.tablePersons.AdressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMailNull() {
+                return this.IsNull(this.tablePersons.MailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMailNull() {
+                this[this.tablePersons.MailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPhotoprofileNull() {
+                return this.IsNull(this.tablePersons.PhotoprofileColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPhotoprofileNull() {
+                this[this.tablePersons.PhotoprofileColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsJobIDNull() {
                 return this.IsNull(this.tablePersons.JobIDColumn);
             }
@@ -1488,6 +1668,66 @@ namespace HRMapp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetJobIDNull() {
                 this[this.tablePersons.JobIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGenderNull() {
+                return this.IsNull(this.tablePersons.GenderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGenderNull() {
+                this[this.tablePersons.GenderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBirthdateNull() {
+                return this.IsNull(this.tablePersons.BirthdateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBirthdateNull() {
+                this[this.tablePersons.BirthdateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDepartmentNull() {
+                return this.IsNull(this.tablePersons.DepartmentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDepartmentNull() {
+                this[this.tablePersons.DepartmentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPhonenumberNull() {
+                return this.IsNull(this.tablePersons.PhonenumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPhonenumberNull() {
+                this[this.tablePersons.PhonenumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEvaluationNull() {
+                return this.IsNull(this.tablePersons.EvaluationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEvaluationNull() {
+                this[this.tablePersons.EvaluationColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1664,6 +1904,38 @@ namespace HRMapp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PersonID1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableUsers.PersonID1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PersonID1\' in table \'Users\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsers.PersonID1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short DpID {
+                get {
+                    try {
+                        return ((short)(this[this.tableUsers.DpIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DpID\' in table \'Users\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsers.DpIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsProfessionIDNull() {
                 return this.IsNull(this.tableUsers.ProfessionIDColumn);
             }
@@ -1708,6 +1980,30 @@ namespace HRMapp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLoginPasswordNull() {
                 this[this.tableUsers.LoginPasswordColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPersonID1Null() {
+                return this.IsNull(this.tableUsers.PersonID1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPersonID1Null() {
+                this[this.tableUsers.PersonID1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDpIDNull() {
+                return this.IsNull(this.tableUsers.DpIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDpIDNull() {
+                this[this.tableUsers.DpIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1941,69 +2237,92 @@ namespace HRMapp.HRMDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("PersonID", "PersonID");
             tableMapping.ColumnMappings.Add("Firstname", "Firstname");
             tableMapping.ColumnMappings.Add("Lastname", "Lastname");
-            tableMapping.ColumnMappings.Add("Phonenumber", "Phonenumber");
             tableMapping.ColumnMappings.Add("Adress", "Adress");
             tableMapping.ColumnMappings.Add("Mail", "Mail");
-            tableMapping.ColumnMappings.Add("Birthdate", "Birthdate");
             tableMapping.ColumnMappings.Add("Photoprofile", "Photoprofile");
             tableMapping.ColumnMappings.Add("JobID", "JobID");
+            tableMapping.ColumnMappings.Add("Gender", "Gender");
+            tableMapping.ColumnMappings.Add("Birthdate", "Birthdate");
+            tableMapping.ColumnMappings.Add("Department", "Department");
+            tableMapping.ColumnMappings.Add("Phonenumber", "Phonenumber");
+            tableMapping.ColumnMappings.Add("Evaluation", "Evaluation");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Persons] WHERE (([PersonID] = @Original_PersonID) AND ((@IsNull_Firstname = 1 AND [Firstname] IS NULL) OR ([Firstname] = @Original_Firstname)) AND ((@IsNull_Lastname = 1 AND [Lastname] IS NULL) OR ([Lastname] = @Original_Lastname)) AND ([Phonenumber] = @Original_Phonenumber) AND ([Adress] = @Original_Adress) AND ([Mail] = @Original_Mail) AND ([Birthdate] = @Original_Birthdate) AND ([Photoprofile] = @Original_Photoprofile) AND ((@IsNull_JobID = 1 AND [JobID] IS NULL) OR ([JobID] = @Original_JobID)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Persons] WHERE (([PersonID] = @Original_PersonID) AND ((@IsNull_Firstname = 1 AND [Firstname] IS NULL) OR ([Firstname] = @Original_Firstname)) AND ((@IsNull_Lastname = 1 AND [Lastname] IS NULL) OR ([Lastname] = @Original_Lastname)) AND ((@IsNull_Adress = 1 AND [Adress] IS NULL) OR ([Adress] = @Original_Adress)) AND ((@IsNull_Mail = 1 AND [Mail] IS NULL) OR ([Mail] = @Original_Mail)) AND ((@IsNull_JobID = 1 AND [JobID] IS NULL) OR ([JobID] = @Original_JobID)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ((@IsNull_Birthdate = 1 AND [Birthdate] IS NULL) OR ([Birthdate] = @Original_Birthdate)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Phonenumber = 1 AND [Phonenumber] IS NULL) OR ([Phonenumber] = @Original_Phonenumber)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Firstname", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Firstname", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Firstname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Firstname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Lastname", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastname", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lastname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phonenumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Adress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Mail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Photoprofile", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photoprofile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_JobID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JobID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JobID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Birthdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Department", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Department", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Phonenumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phonenumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Persons] ([PersonID], [Firstname], [Lastname], [Phonenumber], [Adress], [Mail], [Birthdate], [Photoprofile], [JobID]) VALUES (@PersonID, @Firstname, @Lastname, @Phonenumber, @Adress, @Mail, @Birthdate, @Photoprofile, @JobID);
-SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Photoprofile, JobID FROM Persons WHERE (PersonID = @PersonID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Persons] ([PersonID], [Firstname], [Lastname], [Adress], [Mail], [Photoprofile], [JobID], [Gender], [Birthdate], [Department], [Phonenumber], [Evaluation]) VALUES (@PersonID, @Firstname, @Lastname, @Adress, @Mail, @Photoprofile, @JobID, @Gender, @Birthdate, @Department, @Phonenumber, @Evaluation);
+SELECT PersonID, Firstname, Lastname, Adress, Mail, Photoprofile, JobID, Gender, Birthdate, Department, Phonenumber, Evaluation FROM Persons WHERE (PersonID = @PersonID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Firstname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Firstname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lastname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phonenumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photoprofile", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photoprofile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photoprofile", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photoprofile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Department", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phonenumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Evaluation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Evaluation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Persons] SET [PersonID] = @PersonID, [Firstname] = @Firstname, [Lastname] = @Lastname, [Phonenumber] = @Phonenumber, [Adress] = @Adress, [Mail] = @Mail, [Birthdate] = @Birthdate, [Photoprofile] = @Photoprofile, [JobID] = @JobID WHERE (([PersonID] = @Original_PersonID) AND ((@IsNull_Firstname = 1 AND [Firstname] IS NULL) OR ([Firstname] = @Original_Firstname)) AND ((@IsNull_Lastname = 1 AND [Lastname] IS NULL) OR ([Lastname] = @Original_Lastname)) AND ([Phonenumber] = @Original_Phonenumber) AND ([Adress] = @Original_Adress) AND ([Mail] = @Original_Mail) AND ([Birthdate] = @Original_Birthdate) AND ([Photoprofile] = @Original_Photoprofile) AND ((@IsNull_JobID = 1 AND [JobID] IS NULL) OR ([JobID] = @Original_JobID)));
-SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Photoprofile, JobID FROM Persons WHERE (PersonID = @PersonID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Persons] SET [PersonID] = @PersonID, [Firstname] = @Firstname, [Lastname] = @Lastname, [Adress] = @Adress, [Mail] = @Mail, [Photoprofile] = @Photoprofile, [JobID] = @JobID, [Gender] = @Gender, [Birthdate] = @Birthdate, [Department] = @Department, [Phonenumber] = @Phonenumber, [Evaluation] = @Evaluation WHERE (([PersonID] = @Original_PersonID) AND ((@IsNull_Firstname = 1 AND [Firstname] IS NULL) OR ([Firstname] = @Original_Firstname)) AND ((@IsNull_Lastname = 1 AND [Lastname] IS NULL) OR ([Lastname] = @Original_Lastname)) AND ((@IsNull_Adress = 1 AND [Adress] IS NULL) OR ([Adress] = @Original_Adress)) AND ((@IsNull_Mail = 1 AND [Mail] IS NULL) OR ([Mail] = @Original_Mail)) AND ((@IsNull_JobID = 1 AND [JobID] IS NULL) OR ([JobID] = @Original_JobID)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ((@IsNull_Birthdate = 1 AND [Birthdate] IS NULL) OR ([Birthdate] = @Original_Birthdate)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Phonenumber = 1 AND [Phonenumber] IS NULL) OR ([Phonenumber] = @Original_Phonenumber)));
+SELECT PersonID, Firstname, Lastname, Adress, Mail, Photoprofile, JobID, Gender, Birthdate, Department, Phonenumber, Evaluation FROM Persons WHERE (PersonID = @PersonID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Firstname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Firstname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lastname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phonenumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photoprofile", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photoprofile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photoprofile", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photoprofile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Department", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phonenumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Evaluation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Evaluation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Firstname", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Firstname", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Firstname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Firstname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Lastname", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastname", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lastname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phonenumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Adress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Mail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Photoprofile", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photoprofile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_JobID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JobID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JobID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Birthdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Department", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Department", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Phonenumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phonenumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phonenumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2019,13 +2338,16 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Photo" +
-                "profile, JobID FROM dbo.Persons";
+            this._commandCollection[0].CommandText = "SELECT PersonID, Firstname, Lastname, Adress, Mail, Photoprofile, JobID, Gender, " +
+                "Birthdate, Department, Phonenumber, Evaluation\r\nFROM     Persons";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT * FROM dbo.Persons";
+            this._commandCollection[1].CommandText = "SELECT Adress, Birthdate, Department, Evaluation, Firstname, Gender, JobID, Lastn" +
+                "ame, Mail, PersonID, Phonenumber, Photoprofile FROM Persons WHERE (Department = " +
+                "@DepartmentID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentID", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2056,8 +2378,14 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(HRMDBDataSet.PersonsDataTable dataTable) {
+        public virtual int FillBydp(HRMDBDataSet.PersonsDataTable dataTable, global::System.Nullable<short> DepartmentID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((DepartmentID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((short)(DepartmentID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -2069,8 +2397,14 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual HRMDBDataSet.PersonsDataTable GetDataBy() {
+        public virtual HRMDBDataSet.PersonsDataTable GetDataBydp(global::System.Nullable<short> DepartmentID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((DepartmentID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((short)(DepartmentID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             HRMDBDataSet.PersonsDataTable dataTable = new HRMDBDataSet.PersonsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2109,7 +2443,7 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_PersonID, string Original_Firstname, string Original_Lastname, int Original_Phonenumber, string Original_Adress, string Original_Mail, string Original_Birthdate, string Original_Photoprofile, global::System.Nullable<short> Original_JobID) {
+        public virtual int Delete(long Original_PersonID, string Original_Firstname, string Original_Lastname, string Original_Adress, string Original_Mail, global::System.Nullable<long> Original_JobID, string Original_Gender, string Original_Birthdate, global::System.Nullable<short> Original_Department, string Original_Phonenumber) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_PersonID));
             if ((Original_Firstname == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -2127,38 +2461,61 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Lastname));
             }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Phonenumber));
             if ((Original_Adress == null)) {
-                throw new global::System.ArgumentNullException("Original_Adress");
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Adress));
             }
             if ((Original_Mail == null)) {
-                throw new global::System.ArgumentNullException("Original_Mail");
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Mail));
-            }
-            if ((Original_Birthdate == null)) {
-                throw new global::System.ArgumentNullException("Original_Birthdate");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Birthdate));
-            }
-            if ((Original_Photoprofile == null)) {
-                throw new global::System.ArgumentNullException("Original_Photoprofile");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Photoprofile));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Mail));
             }
             if ((Original_JobID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((short)(Original_JobID.Value));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((long)(Original_JobID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Gender == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Gender));
+            }
+            if ((Original_Birthdate == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Birthdate));
+            }
+            if ((Original_Department.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((short)(Original_Department.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Phonenumber == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Phonenumber));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2180,7 +2537,7 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long PersonID, string Firstname, string Lastname, int Phonenumber, string Adress, string Mail, string Birthdate, string Photoprofile, global::System.Nullable<short> JobID) {
+        public virtual int Insert(long PersonID, string Firstname, string Lastname, string Adress, string Mail, byte[] Photoprofile, global::System.Nullable<long> JobID, string Gender, string Birthdate, global::System.Nullable<short> Department, string Phonenumber, string Evaluation) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(PersonID));
             if ((Firstname == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2194,36 +2551,59 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Lastname));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Phonenumber));
             if ((Adress == null)) {
-                throw new global::System.ArgumentNullException("Adress");
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Adress));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Adress));
             }
             if ((Mail == null)) {
-                throw new global::System.ArgumentNullException("Mail");
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Mail));
-            }
-            if ((Birthdate == null)) {
-                throw new global::System.ArgumentNullException("Birthdate");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Birthdate));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Mail));
             }
             if ((Photoprofile == null)) {
-                throw new global::System.ArgumentNullException("Photoprofile");
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Photoprofile));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((byte[])(Photoprofile));
             }
             if ((JobID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((short)(JobID.Value));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((long)(JobID.Value));
             }
             else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Gender == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Gender));
+            }
+            if ((Birthdate == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Birthdate));
+            }
+            if ((Department.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((short)(Department.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Phonenumber == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Phonenumber));
+            }
+            if ((Evaluation == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Evaluation));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2249,21 +2629,25 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
                     long PersonID, 
                     string Firstname, 
                     string Lastname, 
-                    int Phonenumber, 
                     string Adress, 
                     string Mail, 
+                    byte[] Photoprofile, 
+                    global::System.Nullable<long> JobID, 
+                    string Gender, 
                     string Birthdate, 
-                    string Photoprofile, 
-                    global::System.Nullable<short> JobID, 
+                    global::System.Nullable<short> Department, 
+                    string Phonenumber, 
+                    string Evaluation, 
                     long Original_PersonID, 
                     string Original_Firstname, 
                     string Original_Lastname, 
-                    int Original_Phonenumber, 
                     string Original_Adress, 
                     string Original_Mail, 
+                    global::System.Nullable<long> Original_JobID, 
+                    string Original_Gender, 
                     string Original_Birthdate, 
-                    string Original_Photoprofile, 
-                    global::System.Nullable<short> Original_JobID) {
+                    global::System.Nullable<short> Original_Department, 
+                    string Original_Phonenumber) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(PersonID));
             if ((Firstname == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2277,86 +2661,132 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Lastname));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Phonenumber));
             if ((Adress == null)) {
-                throw new global::System.ArgumentNullException("Adress");
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Adress));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Adress));
             }
             if ((Mail == null)) {
-                throw new global::System.ArgumentNullException("Mail");
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Mail));
-            }
-            if ((Birthdate == null)) {
-                throw new global::System.ArgumentNullException("Birthdate");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Birthdate));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Mail));
             }
             if ((Photoprofile == null)) {
-                throw new global::System.ArgumentNullException("Photoprofile");
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Photoprofile));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((byte[])(Photoprofile));
             }
             if ((JobID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((short)(JobID.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(JobID.Value));
             }
             else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Gender == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Gender));
+            }
+            if ((Birthdate == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_PersonID));
-            if ((Original_Firstname == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Birthdate));
+            }
+            if ((Department.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((short)(Department.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Phonenumber == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Phonenumber));
+            }
+            if ((Evaluation == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Firstname));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Evaluation));
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(Original_PersonID));
+            if ((Original_Firstname == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Firstname));
             }
             if ((Original_Lastname == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Lastname));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Lastname));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Phonenumber));
             if ((Original_Adress == null)) {
-                throw new global::System.ArgumentNullException("Original_Adress");
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Adress));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Adress));
             }
             if ((Original_Mail == null)) {
-                throw new global::System.ArgumentNullException("Original_Mail");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Mail));
-            }
-            if ((Original_Birthdate == null)) {
-                throw new global::System.ArgumentNullException("Original_Birthdate");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Birthdate));
-            }
-            if ((Original_Photoprofile == null)) {
-                throw new global::System.ArgumentNullException("Original_Photoprofile");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Photoprofile));
-            }
-            if ((Original_JobID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((short)(Original_JobID.Value));
-            }
-            else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Mail));
+            }
+            if ((Original_JobID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((long)(Original_JobID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Gender == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Gender));
+            }
+            if ((Original_Birthdate == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Birthdate));
+            }
+            if ((Original_Department.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((short)(Original_Department.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Phonenumber == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Phonenumber));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2381,22 +2811,26 @@ SELECT PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Phot
         public virtual int Update(
                     string Firstname, 
                     string Lastname, 
-                    int Phonenumber, 
                     string Adress, 
                     string Mail, 
+                    byte[] Photoprofile, 
+                    global::System.Nullable<long> JobID, 
+                    string Gender, 
                     string Birthdate, 
-                    string Photoprofile, 
-                    global::System.Nullable<short> JobID, 
+                    global::System.Nullable<short> Department, 
+                    string Phonenumber, 
+                    string Evaluation, 
                     long Original_PersonID, 
                     string Original_Firstname, 
                     string Original_Lastname, 
-                    int Original_Phonenumber, 
                     string Original_Adress, 
                     string Original_Mail, 
+                    global::System.Nullable<long> Original_JobID, 
+                    string Original_Gender, 
                     string Original_Birthdate, 
-                    string Original_Photoprofile, 
-                    global::System.Nullable<short> Original_JobID) {
-            return this.Update(Original_PersonID, Firstname, Lastname, Phonenumber, Adress, Mail, Birthdate, Photoprofile, JobID, Original_PersonID, Original_Firstname, Original_Lastname, Original_Phonenumber, Original_Adress, Original_Mail, Original_Birthdate, Original_Photoprofile, Original_JobID);
+                    global::System.Nullable<short> Original_Department, 
+                    string Original_Phonenumber) {
+            return this.Update(Original_PersonID, Firstname, Lastname, Adress, Mail, Photoprofile, JobID, Gender, Birthdate, Department, Phonenumber, Evaluation, Original_PersonID, Original_Firstname, Original_Lastname, Original_Adress, Original_Mail, Original_JobID, Original_Gender, Original_Birthdate, Original_Department, Original_Phonenumber);
         }
     }
     
@@ -2883,52 +3317,59 @@ SELECT ProfessionID, Description, RankID FROM Professions WHERE (ProfessionID = 
             tableMapping.DataSetTable = "Users";
             tableMapping.ColumnMappings.Add("UserID", "UserID");
             tableMapping.ColumnMappings.Add("ProfessionID", "ProfessionID");
-            tableMapping.ColumnMappings.Add("PersonID", "PersonID");
             tableMapping.ColumnMappings.Add("LoginName", "LoginName");
             tableMapping.ColumnMappings.Add("LoginPassword", "LoginPassword");
+            tableMapping.ColumnMappings.Add("PersonID", "PersonID1");
+            tableMapping.ColumnMappings.Add("DpID", "DpID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Users] WHERE (([UserID] = @Original_UserID) AND ((@IsNull_ProfessionID = 1 AND [ProfessionID] IS NULL) OR ([ProfessionID] = @Original_ProfessionID)) AND ((@IsNull_PersonID = 1 AND [PersonID] IS NULL) OR ([PersonID] = @Original_PersonID)) AND ((@IsNull_LoginName = 1 AND [LoginName] IS NULL) OR ([LoginName] = @Original_LoginName)) AND ((@IsNull_LoginPassword = 1 AND [LoginPassword] IS NULL) OR ([LoginPassword] = @Original_LoginPassword)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Users] WHERE (([UserID] = @Original_UserID) AND ((@IsNull_ProfessionID = 1 AND [ProfessionID] IS NULL) OR ([ProfessionID] = @Original_ProfessionID)) AND ((@IsNull_PersonID = 1 AND [PersonID] IS NULL) OR ([PersonID] = @Original_PersonID)) AND ((@IsNull_LoginName = 1 AND [LoginName] IS NULL) OR ([LoginName] = @Original_LoginName)) AND ((@IsNull_LoginPassword = 1 AND [LoginPassword] IS NULL) OR ([LoginPassword] = @Original_LoginPassword)) AND ((@IsNull_DpID = 1 AND [DpID] IS NULL) OR ([DpID] = @Original_DpID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ProfessionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfessionID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProfessionID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfessionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PersonID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonID", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LoginName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LoginName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LoginPassword", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginPassword", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LoginPassword", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginPassword", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DpID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DpID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DpID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DpID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Users] ([UserID], [ProfessionID], [PersonID], [LoginName], [LoginPassword]) VALUES (@UserID, @ProfessionID, @PersonID, @LoginName, @LoginPassword);
-SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE (UserID = @UserID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Users] ([UserID], [ProfessionID], [PersonID], [LoginName], [LoginPassword], [DpID]) VALUES (@UserID, @ProfessionID, @PersonID, @LoginName, @LoginPassword, @DpID);
+SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword, DpID FROM Users WHERE (UserID = @UserID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProfessionID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfessionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonID", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoginName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoginPassword", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginPassword", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DpID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DpID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [UserID] = @UserID, [ProfessionID] = @ProfessionID, [PersonID] = @PersonID, [LoginName] = @LoginName, [LoginPassword] = @LoginPassword WHERE (([UserID] = @Original_UserID) AND ((@IsNull_ProfessionID = 1 AND [ProfessionID] IS NULL) OR ([ProfessionID] = @Original_ProfessionID)) AND ((@IsNull_PersonID = 1 AND [PersonID] IS NULL) OR ([PersonID] = @Original_PersonID)) AND ((@IsNull_LoginName = 1 AND [LoginName] IS NULL) OR ([LoginName] = @Original_LoginName)) AND ((@IsNull_LoginPassword = 1 AND [LoginPassword] IS NULL) OR ([LoginPassword] = @Original_LoginPassword)));
-SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE (UserID = @UserID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Users] SET [UserID] = @UserID, [ProfessionID] = @ProfessionID, [PersonID] = @PersonID, [LoginName] = @LoginName, [LoginPassword] = @LoginPassword, [DpID] = @DpID WHERE (([UserID] = @Original_UserID) AND ((@IsNull_ProfessionID = 1 AND [ProfessionID] IS NULL) OR ([ProfessionID] = @Original_ProfessionID)) AND ((@IsNull_PersonID = 1 AND [PersonID] IS NULL) OR ([PersonID] = @Original_PersonID)) AND ((@IsNull_LoginName = 1 AND [LoginName] IS NULL) OR ([LoginName] = @Original_LoginName)) AND ((@IsNull_LoginPassword = 1 AND [LoginPassword] IS NULL) OR ([LoginPassword] = @Original_LoginPassword)) AND ((@IsNull_DpID = 1 AND [DpID] IS NULL) OR ([DpID] = @Original_DpID)));
+SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword, DpID FROM Users WHERE (UserID = @UserID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProfessionID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfessionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonID", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoginName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoginPassword", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginPassword", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DpID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DpID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ProfessionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfessionID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProfessionID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfessionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PersonID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonID", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LoginName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LoginName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LoginPassword", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginPassword", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LoginPassword", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginPassword", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DpID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DpID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DpID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DpID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2944,12 +3385,13 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM dbo.Users";
+            this._commandCollection[0].CommandText = "SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword, DpID\r\nFROM     U" +
+                "sers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword\r\nFROM     Users\r\n" +
-                "WHERE  (LoginName = @LoginName) AND (LoginPassword = @LoginPassword)";
+            this._commandCollection[1].CommandText = "SELECT DpID, LoginName, LoginPassword, PersonID, ProfessionID, UserID FROM Users " +
+                "WHERE (LoginName = @LoginName) AND (LoginPassword = @LoginPassword)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoginName", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoginPassword", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "LoginPassword", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3060,7 +3502,7 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_UserID, global::System.Nullable<short> Original_ProfessionID, global::System.Nullable<short> Original_PersonID, string Original_LoginName, string Original_LoginPassword) {
+        public virtual int Delete(short Original_UserID, global::System.Nullable<short> Original_ProfessionID, string Original_PersonID, string Original_LoginName, string Original_LoginPassword, global::System.Nullable<short> Original_DpID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_UserID));
             if ((Original_ProfessionID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -3070,13 +3512,13 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_PersonID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_PersonID.Value));
-            }
-            else {
+            if ((Original_PersonID == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PersonID));
             }
             if ((Original_LoginName == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
@@ -3093,6 +3535,14 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_LoginPassword));
+            }
+            if ((Original_DpID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((short)(Original_DpID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3114,7 +3564,7 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(short UserID, global::System.Nullable<short> ProfessionID, global::System.Nullable<short> PersonID, string LoginName, string LoginPassword) {
+        public virtual int Insert(short UserID, global::System.Nullable<short> ProfessionID, string PersonID, string LoginName, string LoginPassword, global::System.Nullable<short> DpID) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((short)(UserID));
             if ((ProfessionID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((short)(ProfessionID.Value));
@@ -3122,11 +3572,11 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((PersonID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((short)(PersonID.Value));
+            if ((PersonID == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PersonID));
             }
             if ((LoginName == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -3139,6 +3589,12 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(LoginPassword));
+            }
+            if ((DpID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((short)(DpID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3160,7 +3616,7 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short UserID, global::System.Nullable<short> ProfessionID, global::System.Nullable<short> PersonID, string LoginName, string LoginPassword, short Original_UserID, global::System.Nullable<short> Original_ProfessionID, global::System.Nullable<short> Original_PersonID, string Original_LoginName, string Original_LoginPassword) {
+        public virtual int Update(short UserID, global::System.Nullable<short> ProfessionID, string PersonID, string LoginName, string LoginPassword, global::System.Nullable<short> DpID, short Original_UserID, global::System.Nullable<short> Original_ProfessionID, string Original_PersonID, string Original_LoginName, string Original_LoginPassword, global::System.Nullable<short> Original_DpID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(UserID));
             if ((ProfessionID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(ProfessionID.Value));
@@ -3168,11 +3624,11 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((PersonID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(PersonID.Value));
+            if ((PersonID == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PersonID));
             }
             if ((LoginName == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -3186,38 +3642,52 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(LoginPassword));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Original_UserID));
+            if ((DpID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(DpID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_UserID));
             if ((Original_ProfessionID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(Original_ProfessionID.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((short)(Original_ProfessionID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_PersonID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((short)(Original_PersonID.Value));
+            if ((Original_PersonID == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_PersonID));
             }
             if ((Original_LoginName == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_LoginName));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_LoginName));
             }
             if ((Original_LoginPassword == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_LoginPassword));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_LoginPassword));
+            }
+            if ((Original_DpID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((short)(Original_DpID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3239,8 +3709,8 @@ SELECT UserID, ProfessionID, PersonID, LoginName, LoginPassword FROM Users WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<short> ProfessionID, global::System.Nullable<short> PersonID, string LoginName, string LoginPassword, short Original_UserID, global::System.Nullable<short> Original_ProfessionID, global::System.Nullable<short> Original_PersonID, string Original_LoginName, string Original_LoginPassword) {
-            return this.Update(Original_UserID, ProfessionID, PersonID, LoginName, LoginPassword, Original_UserID, Original_ProfessionID, Original_PersonID, Original_LoginName, Original_LoginPassword);
+        public virtual int Update(global::System.Nullable<short> ProfessionID, string PersonID, string LoginName, string LoginPassword, global::System.Nullable<short> DpID, short Original_UserID, global::System.Nullable<short> Original_ProfessionID, string Original_PersonID, string Original_LoginName, string Original_LoginPassword, global::System.Nullable<short> Original_DpID) {
+            return this.Update(Original_UserID, ProfessionID, PersonID, LoginName, LoginPassword, DpID, Original_UserID, Original_ProfessionID, Original_PersonID, Original_LoginName, Original_LoginPassword, Original_DpID);
         }
     }
     
