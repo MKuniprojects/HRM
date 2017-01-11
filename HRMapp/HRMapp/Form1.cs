@@ -16,7 +16,6 @@ namespace HRMapp
         public byte[] CurrentPhotoProfileByteArray { get; set; }
         private HRMDBDataSet.UsersRow thisUser;
         public short UserDpID { get; set; }
-
         public Home()
         {
             InitializeComponent();
@@ -32,7 +31,6 @@ namespace HRMapp
             InitializeComponent();
             thisUser = myUser;
         }
-
 
 
         void ShowProfileImage()
@@ -97,26 +95,7 @@ namespace HRMapp
         }
 
 
-        private void FillComboBoxJobID(ref ComboBox jobComboBox)
-        {
-            try
-            {
-
-                ComboboxItem comCEO = new ComboboxItem() { Text = "CEO", Value = 1 };
-                ComboboxItem comStuff = new ComboboxItem() { Text = "Stuff", Value = 0 };
-
-                List<ComboboxItem> comboitemList = new List<ComboboxItem>() { comCEO, comStuff };
-
-                jobComboBox.Items.AddRange(comboitemList.ToArray());
-                jobComboBox.SelectedIndex = 0;
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
+        
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -204,33 +183,7 @@ namespace HRMapp
 
      
 
-        private void fillBydpToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // this.personsTableAdapter.FillBydp(this.hrmdbDataSet1.Persons);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBydpToolStripButton_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                //    this.personsTableAdapter.FillBydp(this.hrmdbDataSet1.Persons);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-
+       
         private void txtnum_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -238,6 +191,13 @@ namespace HRMapp
                 e.Handled = true;
             }
 
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            loginform log = new loginform();
+            this.Hide();
+            log.Show();
         }
     }
 }

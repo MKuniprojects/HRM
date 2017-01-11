@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Logout = new System.Windows.Forms.Button();
             this.Department = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.brs = new System.Windows.Forms.Button();
@@ -52,7 +54,6 @@
             this.profile = new System.Windows.Forms.PictureBox();
             this.btnempadd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.hrmdbDataSet1 = new HRMapp.HRMDBDataSet();
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +79,7 @@
             this.panel1.BackColor = System.Drawing.Color.DarkBlue;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.Logout);
             this.panel1.Controls.Add(this.Department);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnempadd);
@@ -87,6 +89,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(861, 500);
             this.panel1.TabIndex = 0;
+            // 
+            // Logout
+            // 
+            this.Logout.Location = new System.Drawing.Point(303, 22);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(75, 28);
+            this.Logout.TabIndex = 8;
+            this.Logout.Text = "Logout";
+            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
             // Department
             // 
@@ -123,6 +135,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(417, 403);
             this.panel2.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 303);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 17);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "ΑΞΙΟΛΟΓΗΣΗ";
             // 
             // dateTimePicker1
             // 
@@ -273,7 +294,9 @@
             // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Evaluation", true));
             this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(17, 323);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -330,15 +353,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(344, 403);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 303);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 17);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "ΑΞΙΟΛΟΓΗΣΗ";
             // 
             // bindingSource1
             // 
@@ -487,6 +501,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox Department;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button Logout;
     }
 }
 

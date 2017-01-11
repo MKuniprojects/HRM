@@ -13,24 +13,28 @@ namespace HRMapp
     public partial class Form2 : Form
     {
         public short UserDpID { get; set; }
-       // public HRMDBDataSet.PersonsDataTable myPersonsDataTable { get; set; }
+
         public Form2()
         {
             InitializeComponent();
         }
-       
+        private void Form2_Load(object sender, EventArgs e)
+        {
+          
+        }
+
+
 
         private void save_Click(object sender, EventArgs e)
         {
-            try
+           
+                try
             {
+               
                 using (HRMDBDataSet ds = new HRMDBDataSet())
                 {
-                    this.Validate();
-
-                    //ds.Merge(myPersonsDataTable);
-                    HRMDBDataSet.PersonsRow newRow = ds.Persons[0];
-                    //newRow.PersonID = -1;
+ 
+                    HRMDBDataSet.PersonsRow newRow = hrmdbDataSet1.Persons.NewPersonsRow();
                     newRow.Firstname = txtnfname.Text;
                     newRow.Lastname = txtnlname.Text;
                     newRow.Mail = txtnmail.Text;
@@ -38,23 +42,18 @@ namespace HRMapp
                     newRow.Birthdate = dateTimePickern1.Value.ToString();
                     newRow.Gender = comboBoxnGender.Text;
                     newRow.Department = UserDpID;
-
-                    //hrmdbdataset.personsrow finalrow = ds.persons.findbypersonid(newrow.personid);
-                    //finalrow = ds.persons.loaddatarow(newrow.itemarray(), true);
-
-                   // ds.persons.addpersonsrow(newrow);
-                 //   ds.acceptchanges();
                     
 
+                    hrmdbDataSet1.Persons.Rows.Add(newRow);
+                   
+                    
+                    // this.personsTableAdapter1.Update(this.hrmdbDataSet1.Persons);
                     using (HRMDBDataSetTableAdapters.PersonsTableAdapter ta = new HRMDBDataSetTableAdapters.PersonsTableAdapter())
                     {
-                        
-                        ta.Update(ds.Persons);
-                        
+
+                        ta.Update(this.hrmdbDataSet1.Persons);
                     }
-                    // return bitch
-                    this.DialogResult = DialogResult.OK;
-                    
+
                 }
             }
             catch (Exception ex)
@@ -70,12 +69,13 @@ namespace HRMapp
                 e.Handled = true;
             }
 
-            // only allow one decimal point
-            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            //{
-            //    e.Handled = true;
-            //}
+        }
 
+        private void brs_Click(object sender, EventArgs e)
+        {
+            
+            //test.Text = Convert.ToString(max);
+          
         }
     }
 

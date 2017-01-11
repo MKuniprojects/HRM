@@ -52,5 +52,12 @@ namespace HRMapp
                 ta.Update(this.hRMDBDataSet.Users);
             }
         }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            loginform log = new loginform();
+            this.Hide();
+            log.Show();
+        }
     }
 }

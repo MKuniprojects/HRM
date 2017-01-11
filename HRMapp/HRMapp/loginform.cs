@@ -66,7 +66,7 @@ namespace HRMapp
 
                             case (int)AccessLevels.dm:
                                 //dm login
-                                dmform dmf = new dmform();
+                                dmform dmf = new dmform(userRow);
                                 this.Hide();
                                 dmf.Show();
                                 break;
@@ -108,21 +108,7 @@ namespace HRMapp
             }
         }
 
-        private void textBox1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-
-        private void textBoxPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginform_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
 
         private void textBoxUsername_Leave(object sender, EventArgs e)
         {
@@ -154,14 +140,5 @@ namespace HRMapp
             textBoxPassword.PasswordChar = '*';
         }
 
-        private void loginform_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

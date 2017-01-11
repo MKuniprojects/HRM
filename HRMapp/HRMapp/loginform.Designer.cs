@@ -62,8 +62,6 @@
             this.textBoxUsername.Size = new System.Drawing.Size(155, 29);
             this.textBoxUsername.TabIndex = 2;
             this.textBoxUsername.Text = "Username";
-            this.textBoxUsername.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBoxUsername.TextChanged += new System.EventHandler(this.textBoxUsername_TextChanged);
             this.textBoxUsername.Enter += new System.EventHandler(this.textBoxUsername_Enter);
             this.textBoxUsername.Leave += new System.EventHandler(this.textBoxUsername_Leave);
             // 
@@ -78,7 +76,6 @@
             this.textBoxPassword.Size = new System.Drawing.Size(155, 29);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.Text = "Password";
-            this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
             this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
             // 
@@ -107,8 +104,6 @@
             this.Text = "loginform";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.loginform_Load);
-            this.Click += new System.EventHandler(this.loginform_Click);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.loginform_MouseClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 

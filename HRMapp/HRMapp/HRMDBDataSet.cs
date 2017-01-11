@@ -1,4 +1,7 @@
-﻿namespace HRMapp
+﻿using System;
+using System.Data;
+
+namespace HRMapp
 {
 
 
@@ -14,8 +17,20 @@ namespace HRMapp.HRMDBDataSetTableAdapters
 {
     partial class PersonsTableAdapter
     {
-       
+        internal void Update(DataColumn evaluationColumn)
+        {
+            throw new NotImplementedException();
+        }
 
+        internal void FillBypid(HRMDBDataSet.PersonsDataTable persons, short personID)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void FillBypid(HRMDBDataSet.PersonsDataTable persons, long personID)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public partial class UsersTableAdapter {

@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.dateTimePickern1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxnGender = new System.Windows.Forms.ComboBox();
             this.brs = new System.Windows.Forms.Button();
@@ -46,15 +49,20 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtnfname = new System.Windows.Forms.TextBox();
             this.profile = new System.Windows.Forms.PictureBox();
-            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.personsTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.PersonsTableAdapter();
+            this.hrmdbDataSet1 = new HRMapp.HRMDBDataSet();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.test = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hrmdbDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.test);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.textBoxPhoneNumber);
             this.panel2.Controls.Add(this.dateTimePickern1);
@@ -74,10 +82,29 @@
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.txtnfname);
             this.panel2.Controls.Add(this.profile);
-            this.panel2.Location = new System.Drawing.Point(1, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(417, 408);
+            this.panel2.Size = new System.Drawing.Size(414, 404);
             this.panel2.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 295);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 17);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "ΑΞΙΟΛΟΓΗΣΗ";
+            // 
+            // textBoxPhoneNumber
+            // 
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(270, 134);
+            this.textBoxPhoneNumber.MaxLength = 10;
+            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(131, 22);
+            this.textBoxPhoneNumber.TabIndex = 19;
+            this.textBoxPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhoneNumber_KeyPress);
             // 
             // dateTimePickern1
             // 
@@ -112,6 +139,7 @@
             this.brs.TabIndex = 17;
             this.brs.Text = "Browse";
             this.brs.UseVisualStyleBackColor = true;
+            this.brs.Click += new System.EventHandler(this.brs_Click);
             // 
             // label6
             // 
@@ -233,23 +261,21 @@
             this.profile.TabIndex = 0;
             this.profile.TabStop = false;
             // 
-            // textBoxPhoneNumber
+            // personsTableAdapter1
             // 
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(270, 134);
-            this.textBoxPhoneNumber.MaxLength = 10;
-            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            this.textBoxPhoneNumber.Size = new System.Drawing.Size(131, 22);
-            this.textBoxPhoneNumber.TabIndex = 19;
-            this.textBoxPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhoneNumber_KeyPress);
+            this.personsTableAdapter1.ClearBeforeFill = true;
             // 
-            // label7
+            // hrmdbDataSet1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 295);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 17);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "ΑΞΙΟΛΟΓΗΣΗ";
+            this.hrmdbDataSet1.DataSetName = "HRMDBDataSet";
+            this.hrmdbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // test
+            // 
+            this.test.Location = new System.Drawing.Point(195, 280);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(49, 22);
+            this.test.TabIndex = 21;
             // 
             // Form2
             // 
@@ -262,6 +288,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hrmdbDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,5 +316,9 @@
         private System.Windows.Forms.PictureBox profile;
         private System.Windows.Forms.TextBox textBoxPhoneNumber;
         private System.Windows.Forms.Label label7;
+        private HRMDBDataSetTableAdapters.PersonsTableAdapter personsTableAdapter1;
+        private HRMDBDataSet hrmdbDataSet1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.TextBox test;
     }
 }

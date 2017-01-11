@@ -30,19 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.updateusr = new System.Windows.Forms.Button();
             this.USERS = new System.Windows.Forms.Label();
             this.dataGridViewHRM = new System.Windows.Forms.DataGridView();
-            this.updateusr = new System.Windows.Forms.Button();
-            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.hRMDBDataSet = new HRMapp.HRMDBDataSet();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
             this.loginNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.professionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.hRMDBDataSet = new HRMapp.HRMDBDataSet();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
+            this.Logout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHRM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
@@ -52,6 +53,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Logout);
             this.panel1.Controls.Add(this.updateusr);
             this.panel1.Controls.Add(this.USERS);
             this.panel1.Controls.Add(this.dataGridViewHRM);
@@ -60,6 +62,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1191, 560);
             this.panel1.TabIndex = 0;
+            // 
+            // updateusr
+            // 
+            this.updateusr.Location = new System.Drawing.Point(36, 503);
+            this.updateusr.Name = "updateusr";
+            this.updateusr.Size = new System.Drawing.Size(87, 31);
+            this.updateusr.TabIndex = 3;
+            this.updateusr.Text = "Update";
+            this.updateusr.UseVisualStyleBackColor = true;
+            this.updateusr.Click += new System.EventHandler(this.updateusr_Click);
             // 
             // USERS
             // 
@@ -91,35 +103,6 @@
             this.dataGridViewHRM.Size = new System.Drawing.Size(444, 408);
             this.dataGridViewHRM.TabIndex = 0;
             this.dataGridViewHRM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHRM_CellContentClick);
-            // 
-            // updateusr
-            // 
-            this.updateusr.Location = new System.Drawing.Point(36, 503);
-            this.updateusr.Name = "updateusr";
-            this.updateusr.Size = new System.Drawing.Size(87, 31);
-            this.updateusr.TabIndex = 3;
-            this.updateusr.Text = "Update";
-            this.updateusr.UseVisualStyleBackColor = true;
-            this.updateusr.Click += new System.EventHandler(this.updateusr_Click);
-            // 
-            // usersBindingSource1
-            // 
-            this.usersBindingSource1.DataMember = "Users";
-            this.usersBindingSource1.DataSource = this.hRMDBDataSet;
-            // 
-            // hRMDBDataSet
-            // 
-            this.hRMDBDataSet.DataSetName = "HRMDBDataSet";
-            this.hRMDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.hRMDBDataSet;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
             // 
             // loginNameDataGridViewTextBoxColumn
             // 
@@ -163,6 +146,35 @@
             this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
             this.personIDDataGridViewTextBoxColumn.Visible = false;
             // 
+            // usersBindingSource1
+            // 
+            this.usersBindingSource1.DataMember = "Users";
+            this.usersBindingSource1.DataSource = this.hRMDBDataSet;
+            // 
+            // hRMDBDataSet
+            // 
+            this.hRMDBDataSet.DataSetName = "HRMDBDataSet";
+            this.hRMDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.hRMDBDataSet;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // Logout
+            // 
+            this.Logout.Location = new System.Drawing.Point(1094, 12);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(75, 28);
+            this.Logout.TabIndex = 9;
+            this.Logout.Text = "Logout";
+            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
             // ceoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -200,5 +212,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DpID;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button Logout;
     }
 }
