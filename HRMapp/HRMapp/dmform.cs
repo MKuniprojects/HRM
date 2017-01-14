@@ -11,18 +11,19 @@ using System.Windows.Forms;
 
 namespace HRMapp
 {
-    public partial class dmform : Form
+    public partial class DMform : Form
     {
         public byte[] CurrentPhotoProfileByteArray { get; set; }
         private HRMDBDataSet.UsersRow thisUsr;
         public short UserDpID  { get; set; }
 
-        public dmform()
+        public DMform()
         {
             InitializeComponent();
         }
 
-        public dmform(HRMDBDataSet.UsersRow myUser)
+
+        public DMform(HRMDBDataSet.UsersRow myUser)
         {
             //Constructor
             InitializeComponent();
@@ -32,10 +33,11 @@ namespace HRMapp
 
         private void dmform_Load(object sender, EventArgs e)
         {
+            this.UserDpID = thisUsr.DpID;
             LoadData();
-            dmform f = new dmform();
-            int id = f.UserDpID = thisUsr.DpID;
-            Departmentm.Text = "Department: " + Convert.ToString(id);
+            DMform f = new DMform();
+            profile.SizeMode = PictureBoxSizeMode.StretchImage;
+
         }
 
         private void LoadData()
@@ -46,8 +48,10 @@ namespace HRMapp
                 using (HRMDBDataSet ds = new HRMDBDataSet())
                 {
                     this.personsTableAdapter.FillBydp(ds.Persons, thisUsr.DpID);
+                    this.departmentsTableAdapter1.FillBydpname(ds.Departments, UserDpID);
                     hRMDBDataSet.Merge(ds);
                 }
+                Departmentm.Text = "Department: " + hRMDBDataSet.Departments.Rows[0]["Department"].ToString();
                 ShowProfileImage();
             }
             catch (Exception)
@@ -93,8 +97,8 @@ namespace HRMapp
                personsBindingSource.EndEdit();
                 using (HRMDBDataSetTableAdapters.PersonsTableAdapter ta = new HRMDBDataSetTableAdapters.PersonsTableAdapter())
                 {
-                    
                     ta.Update(this.hRMDBDataSet.Persons);
+                    pictureBoxAccept.Visible = true;
                 }
                 ShowProfileImage();
             }
@@ -107,7 +111,7 @@ namespace HRMapp
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            loginform log = new loginform();
+            LOGINform log = new LOGINform();
             this.Hide();
             log.Show();
         }
@@ -116,6 +120,9 @@ namespace HRMapp
             ShowProfileImage();
         }
 
-
+        private void update_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxAccept.Visible = false;
+        }
     }
 }

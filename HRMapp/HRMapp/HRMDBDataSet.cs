@@ -7,6 +7,10 @@ namespace HRMapp
 
     partial class HRMDBDataSet
     {
+        partial class PersonsDataTable
+        {
+        }
+
         partial class UsersDataTable
         {
         }
@@ -28,6 +32,11 @@ namespace HRMapp.HRMDBDataSetTableAdapters
         }
 
         internal void FillBypid(HRMDBDataSet.PersonsDataTable persons, long personID)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object GetDataBydp(HRMDBDataSet.PersonsDataTable persons, HRMDBDataSet.UsersRow thisUser)
         {
             throw new NotImplementedException();
         }

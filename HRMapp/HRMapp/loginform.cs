@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace HRMapp
 {
-    public partial class loginform : Form
+    public partial class LOGINform : Form
     {
         private bool flagUsername = false;
         private bool flagPassword = false;
 
-        public loginform()
+        public LOGINform()
         {
             InitializeComponent();
         }
@@ -54,8 +54,9 @@ namespace HRMapp
                     }
                     else
                     {
-                        HRMDBDataSet.UsersRow userRow = ds.Users.Rows[0] as HRMDBDataSet.UsersRow; 
+                        HRMDBDataSet.UsersRow userRow = ds.Users.Rows[0] as HRMDBDataSet.UsersRow;
                         int usersProfessionID = userRow.ProfessionID;
+                        
                         switch (usersProfessionID)
                         {
                             case (int)AccessLevels.hr:
@@ -66,14 +67,14 @@ namespace HRMapp
 
                             case (int)AccessLevels.dm:
                                 //dm login
-                                dmform dmf = new dmform(userRow);
+                                DMform dmf = new DMform(userRow);
                                 this.Hide();
                                 dmf.Show();
                                 break;
 
                             case (int)AccessLevels.ceo:
                                 //ceo login
-                                ceoForm ceof = new ceoForm();
+                                CEOform ceof = new CEOform();
                                 this.Hide();
                                 ceof.Show();
                                 break;
@@ -91,7 +92,6 @@ namespace HRMapp
 
         }
 
-
         private void ClickAndHide(TextBox txb, ref bool flag)
         {
             try
@@ -107,8 +107,6 @@ namespace HRMapp
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
         private void textBoxUsername_Leave(object sender, EventArgs e)
         {

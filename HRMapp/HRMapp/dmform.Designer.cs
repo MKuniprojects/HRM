@@ -1,6 +1,6 @@
 ﻿namespace HRMapp
 {
-    partial class dmform
+    partial class DMform
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DMform));
             this.paneldm = new System.Windows.Forms.Panel();
             this.Logout = new System.Windows.Forms.Button();
             this.Departmentm = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBoxAccept = new System.Windows.Forms.PictureBox();
             this.birthdate = new System.Windows.Forms.TextBox();
             this.personsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hRMDBDataSet = new HRMapp.HRMDBDataSet();
@@ -54,6 +56,9 @@
             this.txtfname = new System.Windows.Forms.TextBox();
             this.profile = new System.Windows.Forms.PictureBox();
             this.dataGridViewdm = new System.Windows.Forms.DataGridView();
+            this.personsTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.PersonsTableAdapter();
+            this.usersTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
+            this.departmentsTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.DepartmentsTableAdapter();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,10 +71,9 @@
             this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phonenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evaluationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personsTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.PersonsTableAdapter();
-            this.usersTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
             this.paneldm.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccept)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hRMDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
@@ -78,6 +82,7 @@
             // 
             // paneldm
             // 
+            this.paneldm.BackColor = System.Drawing.Color.LightBlue;
             this.paneldm.Controls.Add(this.Logout);
             this.paneldm.Controls.Add(this.Departmentm);
             this.paneldm.Controls.Add(this.panel2);
@@ -85,12 +90,12 @@
             this.paneldm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paneldm.Location = new System.Drawing.Point(0, 0);
             this.paneldm.Name = "paneldm";
-            this.paneldm.Size = new System.Drawing.Size(804, 476);
+            this.paneldm.Size = new System.Drawing.Size(817, 488);
             this.paneldm.TabIndex = 0;
             // 
             // Logout
             // 
-            this.Logout.Location = new System.Drawing.Point(281, 19);
+            this.Logout.Location = new System.Drawing.Point(717, 26);
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(75, 28);
             this.Logout.TabIndex = 11;
@@ -100,16 +105,19 @@
             // 
             // Departmentm
             // 
+            this.Departmentm.BackColor = System.Drawing.Color.LightBlue;
+            this.Departmentm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Departmentm.Enabled = false;
-            this.Departmentm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Departmentm.Location = new System.Drawing.Point(12, 12);
+            this.Departmentm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Departmentm.Location = new System.Drawing.Point(25, 19);
             this.Departmentm.Name = "Departmentm";
-            this.Departmentm.Size = new System.Drawing.Size(208, 34);
+            this.Departmentm.Size = new System.Drawing.Size(344, 23);
             this.Departmentm.TabIndex = 10;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.pictureBoxAccept);
             this.panel2.Controls.Add(this.birthdate);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.comboBoxGender);
@@ -132,6 +140,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(417, 403);
             this.panel2.TabIndex = 8;
+            // 
+            // pictureBoxAccept
+            // 
+            this.pictureBoxAccept.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxAccept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxAccept.BackgroundImage")));
+            this.pictureBoxAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxAccept.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBoxAccept.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAccept.Image")));
+            this.pictureBoxAccept.Location = new System.Drawing.Point(236, 268);
+            this.pictureBoxAccept.Name = "pictureBoxAccept";
+            this.pictureBoxAccept.Size = new System.Drawing.Size(28, 31);
+            this.pictureBoxAccept.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxAccept.TabIndex = 23;
+            this.pictureBoxAccept.TabStop = false;
+            this.pictureBoxAccept.Visible = false;
             // 
             // birthdate
             // 
@@ -284,13 +307,14 @@
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(270, 262);
+            this.update.Location = new System.Drawing.Point(270, 268);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(131, 37);
+            this.update.Size = new System.Drawing.Size(131, 31);
             this.update.TabIndex = 3;
             this.update.Text = "Update";
             this.update.UseVisualStyleBackColor = true;
             this.update.Click += new System.EventHandler(this.update_Click);
+            this.update.MouseLeave += new System.EventHandler(this.update_MouseLeave);
             // 
             // textBox2
             // 
@@ -314,7 +338,7 @@
             // 
             this.profile.Location = new System.Drawing.Point(17, 21);
             this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(160, 188);
+            this.profile.Size = new System.Drawing.Size(160, 200);
             this.profile.TabIndex = 0;
             this.profile.TabStop = false;
             // 
@@ -340,15 +364,28 @@
             this.phonenumberDataGridViewTextBoxColumn,
             this.evaluationDataGridViewTextBoxColumn});
             this.dataGridViewdm.DataSource = this.personsBindingSource;
-            this.dataGridViewdm.Location = new System.Drawing.Point(12, 59);
+            this.dataGridViewdm.Location = new System.Drawing.Point(25, 59);
             this.dataGridViewdm.Name = "dataGridViewdm";
             this.dataGridViewdm.ReadOnly = true;
             this.dataGridViewdm.RowTemplate.Height = 24;
             this.dataGridViewdm.Size = new System.Drawing.Size(344, 403);
             this.dataGridViewdm.TabIndex = 9;
             // 
+            // personsTableAdapter
+            // 
+            this.personsTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // departmentsTableAdapter1
+            // 
+            this.departmentsTableAdapter1.ClearBeforeFill = true;
+            // 
             // firstnameDataGridViewTextBoxColumn
             // 
+            this.firstnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "Firstname";
             this.firstnameDataGridViewTextBoxColumn.HeaderText = "Firstname";
             this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
@@ -356,6 +393,7 @@
             // 
             // lastnameDataGridViewTextBoxColumn
             // 
+            this.lastnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "Lastname";
             this.lastnameDataGridViewTextBoxColumn.HeaderText = "Lastname";
             this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
@@ -441,27 +479,22 @@
             this.evaluationDataGridViewTextBoxColumn.ReadOnly = true;
             this.evaluationDataGridViewTextBoxColumn.Visible = false;
             // 
-            // personsTableAdapter
-            // 
-            this.personsTableAdapter.ClearBeforeFill = true;
-            // 
-            // usersTableAdapter1
-            // 
-            this.usersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // dmform
+            // DMform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 476);
+            this.ClientSize = new System.Drawing.Size(817, 488);
             this.Controls.Add(this.paneldm);
-            this.Name = "dmform";
-            this.Text = "dmform";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "DMform";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.dmform_Load);
             this.paneldm.ResumeLayout(false);
             this.paneldm.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccept)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hRMDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
@@ -496,6 +529,11 @@
         private HRMDBDataSet hRMDBDataSet;
         private System.Windows.Forms.BindingSource personsBindingSource;
         private HRMDBDataSetTableAdapters.PersonsTableAdapter personsTableAdapter;
+        private HRMDBDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
+        private System.Windows.Forms.TextBox birthdate;
+        private System.Windows.Forms.Button Logout;
+        private HRMDBDataSetTableAdapters.DepartmentsTableAdapter departmentsTableAdapter1;
+        private System.Windows.Forms.PictureBox pictureBoxAccept;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
@@ -508,8 +546,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phonenumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn evaluationDataGridViewTextBoxColumn;
-        private HRMDBDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
-        private System.Windows.Forms.TextBox birthdate;
-        private System.Windows.Forms.Button Logout;
     }
 }

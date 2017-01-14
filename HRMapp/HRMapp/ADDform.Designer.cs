@@ -1,6 +1,6 @@
 ﻿namespace HRMapp
 {
-    partial class Form2
+    partial class ADDform
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADDform));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
@@ -48,13 +49,12 @@
             this.save = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtnfname = new System.Windows.Forms.TextBox();
-            this.profile = new System.Windows.Forms.PictureBox();
+            this.PictureBoxProfile = new System.Windows.Forms.PictureBox();
             this.personsTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.PersonsTableAdapter();
             this.hrmdbDataSet1 = new HRMapp.HRMDBDataSet();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.test = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hrmdbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +62,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Controls.Add(this.test);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.textBoxPhoneNumber);
             this.panel2.Controls.Add(this.dateTimePickern1);
@@ -81,7 +80,7 @@
             this.panel2.Controls.Add(this.save);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.txtnfname);
-            this.panel2.Controls.Add(this.profile);
+            this.panel2.Controls.Add(this.PictureBoxProfile);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -253,13 +252,13 @@
             this.txtnfname.Size = new System.Drawing.Size(131, 22);
             this.txtnfname.TabIndex = 1;
             // 
-            // profile
+            // PictureBoxProfile
             // 
-            this.profile.Location = new System.Drawing.Point(17, 21);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(160, 188);
-            this.profile.TabIndex = 0;
-            this.profile.TabStop = false;
+            this.PictureBoxProfile.Location = new System.Drawing.Point(17, 21);
+            this.PictureBoxProfile.Name = "PictureBoxProfile";
+            this.PictureBoxProfile.Size = new System.Drawing.Size(160, 188);
+            this.PictureBoxProfile.TabIndex = 0;
+            this.PictureBoxProfile.TabStop = false;
             // 
             // personsTableAdapter1
             // 
@@ -270,24 +269,20 @@
             this.hrmdbDataSet1.DataSetName = "HRMDBDataSet";
             this.hrmdbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // test
-            // 
-            this.test.Location = new System.Drawing.Point(195, 280);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(49, 22);
-            this.test.TabIndex = 21;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 404);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "New Employee";
+            this.Load += new System.EventHandler(this.Form2_Load_1);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hrmdbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -313,12 +308,11 @@
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtnfname;
-        private System.Windows.Forms.PictureBox profile;
+        private System.Windows.Forms.PictureBox PictureBoxProfile;
         private System.Windows.Forms.TextBox textBoxPhoneNumber;
         private System.Windows.Forms.Label label7;
         private HRMDBDataSetTableAdapters.PersonsTableAdapter personsTableAdapter1;
         private HRMDBDataSet hrmdbDataSet1;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.TextBox test;
     }
 }

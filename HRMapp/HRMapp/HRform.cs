@@ -16,18 +16,15 @@ namespace HRMapp
         public byte[] CurrentPhotoProfileByteArray { get; set; }
         private HRMDBDataSet.UsersRow thisUser;
         public short UserDpID { get; set; }
+
+
         public Home()
         {
             InitializeComponent();
-           
         }
 
         public Home(HRMDBDataSet.UsersRow myUser)
         {
-            //Δημιουργείς constructor να δέχετε UsersRow ως όρισμα, οπότε έχεις όλες τις κολόνες της βάσεις ως ιδιότητες στο 
-            // αντικείμενο myUSer
-            // Χρησιμοποιείς αυτό το αντικείμενο εδώ μέσα για να μην το ξαναφωνάξεις.
-
             InitializeComponent();
             thisUser = myUser;
         }
@@ -43,20 +40,17 @@ namespace HRMapp
                 if (imgbytes == null)
                 {
                     CurrentPhotoProfileByteArray = null;
-                    profile.Image = null;
+                    profileImg.Image = null;
                     return;
                 }
-
-
                 using (var ms = new MemoryStream(imgbytes))
                 {
-                    profile.Image = Image.FromStream(ms);
+                    profileImg.Image = Image.FromStream(ms);
                 }
                 CurrentPhotoProfileByteArray = imgbytes;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 throw;
             }
 
@@ -64,69 +58,51 @@ namespace HRMapp
 
         private void Home_Load(object sender, EventArgs e)
         {
+            profileImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.UserDpID = thisUser.DpID;
             LoadData();
             Home f = new Home();
-            int id=f.UserDpID = thisUser.DpID;
-            Department.Text = "Department: " +Convert.ToString(id);
         }
 
         private void LoadData()
         {
             try
             {
-                // TODO: This line of code loads data into the 'hrmdbDataSet1.Persons' table. You can move, or remove it, as needed.
                 using (HRMDBDataSet ds = new HRMDBDataSet())
                 {
                     this.personsTableAdapter.FillBydp(ds.Persons, thisUser.DpID);
+                    this.departmentsTableAdapter.FillBydpname(ds.Departments, UserDpID);
                     hrmdbDataSet1.Merge(ds);
                 }
-                
-
-                
+                Department.Text ="Department: "+ hrmdbDataSet1.Departments.Rows[0]["Department"].ToString();
                 ShowProfileImage();
-                      // dataGridView1.DataSource = this.personsTableAdapter.GetDataBydp;
             }
             catch (Exception)
             {
-
                 throw;
             }
-          
+
         }
-
-
-        
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             try
             {
                 this.bindingSource1.DataSource = this.hrmdbDataSet1;
                 DataRowView dview = bindingSource1.Current as DataRowView;
-                dview.Row["Photoprofile"] = CurrentPhotoProfileByteArray; // edw kanoume sti vasi to bytearray
+                dview.Row["Photoprofile"] = CurrentPhotoProfileByteArray;//tobytearray in db
                 bindingSource1.EndEdit();
-
-                // this.personsTableAdapter.Update(this.hrmdbDataSet1.Persons);
                 using (HRMDBDataSetTableAdapters.PersonsTableAdapter ta = new HRMDBDataSetTableAdapters.PersonsTableAdapter())
                 {
-
                     ta.Update(this.hrmdbDataSet1.Persons);
+                    pictureBoxAccept.Visible = true;
                 }
-
             }
             catch
             {
                 throw;
-
             }
-
-
-
         }
-
-
-
         private void brs_Click(object sender, EventArgs e)
         {
             try
@@ -135,20 +111,14 @@ namespace HRMapp
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
-
                         byte[] imgdata = System.IO.File.ReadAllBytes(ofd.FileName);
 
-                        CurrentPhotoProfileByteArray = imgdata; // den eimai sigouros gia auti ti grammi
-
-                        //var imageByte = Image.FromFile(ofd.FileName);
+                        CurrentPhotoProfileByteArray = imgdata;
                         using (var ms = new MemoryStream(imgdata))
                         {
-                            profile.Image = Image.FromStream(ms);
+                            profileImg.Image = Image.FromStream(ms);
                         }
-
-
                     }
-
                 }
             }
             catch (Exception ex)
@@ -157,21 +127,18 @@ namespace HRMapp
             }
         }
 
-        // αυτό το event, κάνει fire , κάθε φορά που αλλάζουμε επιλεγμένη γραμμή στο dataset. 
-        // Επειδή δεν έχει databind η φωτό όπως έχουμε τα text box, θα βάζουμε τη συνάρτηση να μας φτιάχνει το profile
-        // 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)
         {
             ShowProfileImage();
         }
 
-
         private void btnempadd_Click(object sender, EventArgs e)
         {
-            Form2 f = new Form2();
+            ADDform f = new ADDform();
             f.UserDpID = thisUser.DpID;
             f.ShowDialog();
-            if (f.DialogResult == DialogResult.OK) {
+            if (f.DialogResult == DialogResult.OK)
+            {
                 f.Dispose();
                 LoadData();
             }
@@ -181,23 +148,41 @@ namespace HRMapp
             }
         }
 
-     
-
-       
         private void txtnum_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
-
         }
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            loginform log = new loginform();
+            LOGINform log = new LOGINform();
             this.Hide();
             log.Show();
+        }
+
+        private void dataGridViewDP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (HRMDBDataSet ds = new HRMDBDataSet())
+            {
+                this.personsTableAdapter.FillBydp(ds.Persons, thisUser.DpID);
+            }
+        }
+
+        private void dataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            using (HRMDBDataSetTableAdapters.PersonsTableAdapter ta = new HRMDBDataSetTableAdapters.PersonsTableAdapter())
+            {
+                ta.Update(this.hrmdbDataSet1.Persons);
+
+            }
+        }
+
+        private void update_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxAccept.Visible = false;
         }
     }
 }

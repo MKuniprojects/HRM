@@ -1,6 +1,6 @@
 ﻿namespace HRMapp
 {
-    partial class ceoForm
+    partial class CEOform
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CEOform));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxAccept = new System.Windows.Forms.PictureBox();
+            this.Logout = new System.Windows.Forms.Button();
             this.updateusr = new System.Windows.Forms.Button();
             this.USERS = new System.Windows.Forms.Label();
             this.dataGridViewHRM = new System.Windows.Forms.DataGridView();
@@ -43,8 +46,8 @@
             this.hRMDBDataSet = new HRMapp.HRMDBDataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
-            this.Logout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccept)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHRM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hRMDBDataSet)).BeginInit();
@@ -53,6 +56,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.pictureBoxAccept);
             this.panel1.Controls.Add(this.Logout);
             this.panel1.Controls.Add(this.updateusr);
             this.panel1.Controls.Add(this.USERS);
@@ -60,12 +65,35 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1191, 560);
+            this.panel1.Size = new System.Drawing.Size(519, 529);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBoxAccept
+            // 
+            this.pictureBoxAccept.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxAccept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxAccept.BackgroundImage")));
+            this.pictureBoxAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxAccept.Location = new System.Drawing.Point(129, 477);
+            this.pictureBoxAccept.Name = "pictureBoxAccept";
+            this.pictureBoxAccept.Size = new System.Drawing.Size(28, 31);
+            this.pictureBoxAccept.TabIndex = 10;
+            this.pictureBoxAccept.TabStop = false;
+            this.pictureBoxAccept.Visible = false;
+            // 
+            // Logout
+            // 
+            this.Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Logout.Location = new System.Drawing.Point(405, 29);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(75, 28);
+            this.Logout.TabIndex = 9;
+            this.Logout.Text = "Logout";
+            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
             // updateusr
             // 
-            this.updateusr.Location = new System.Drawing.Point(36, 503);
+            this.updateusr.Location = new System.Drawing.Point(36, 477);
             this.updateusr.Name = "updateusr";
             this.updateusr.Size = new System.Drawing.Size(87, 31);
             this.updateusr.TabIndex = 3;
@@ -76,10 +104,10 @@
             // USERS
             // 
             this.USERS.AutoSize = true;
-            this.USERS.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.USERS.Location = new System.Drawing.Point(208, 31);
+            this.USERS.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.USERS.Location = new System.Drawing.Point(193, 19);
             this.USERS.Name = "USERS";
-            this.USERS.Size = new System.Drawing.Size(100, 29);
+            this.USERS.Size = new System.Drawing.Size(124, 36);
             this.USERS.TabIndex = 2;
             this.USERS.Text = "USERS";
             this.USERS.Click += new System.EventHandler(this.HRM_Click);
@@ -103,6 +131,8 @@
             this.dataGridViewHRM.Size = new System.Drawing.Size(444, 408);
             this.dataGridViewHRM.TabIndex = 0;
             this.dataGridViewHRM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHRM_CellContentClick);
+            this.dataGridViewHRM.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridViewHRM_UserDeletedRow);
+            this.dataGridViewHRM.Enter += new System.EventHandler(this.dataGridViewHRM_Enter);
             // 
             // loginNameDataGridViewTextBoxColumn
             // 
@@ -165,29 +195,21 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // Logout
-            // 
-            this.Logout.Location = new System.Drawing.Point(1094, 12);
-            this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(75, 28);
-            this.Logout.TabIndex = 9;
-            this.Logout.Text = "Logout";
-            this.Logout.UseVisualStyleBackColor = true;
-            this.Logout.Click += new System.EventHandler(this.Logout_Click);
-            // 
             // ceoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 560);
+            this.ClientSize = new System.Drawing.Size(519, 529);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ceoForm";
-            this.Text = "ceoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ceoForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccept)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHRM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hRMDBDataSet)).EndInit();
@@ -213,5 +235,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button Logout;
+        private System.Windows.Forms.PictureBox pictureBoxAccept;
     }
 }

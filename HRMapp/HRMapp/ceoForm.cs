@@ -5,14 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HRMapp
 {
-    public partial class ceoForm : Form
+    public partial class CEOform : Form
     {
-        public ceoForm()
+        public CEOform()
         {
             InitializeComponent();
         }
@@ -50,14 +51,28 @@ namespace HRMapp
             using (HRMDBDataSetTableAdapters.UsersTableAdapter ta = new HRMDBDataSetTableAdapters.UsersTableAdapter())
             {
                 ta.Update(this.hRMDBDataSet.Users);
+                pictureBoxAccept.Visible = true;
             }
         }
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            loginform log = new loginform();
+            LOGINform log = new LOGINform();
             this.Hide();
             log.Show();
+        }
+
+        private void dataGridViewHRM_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            using (HRMDBDataSetTableAdapters.UsersTableAdapter ta = new HRMDBDataSetTableAdapters.UsersTableAdapter())
+            {
+                ta.Update(this.hRMDBDataSet.Users);
+            }
+        }
+
+        private void dataGridViewHRM_Enter(object sender, EventArgs e)
+        {
+            pictureBoxAccept.Visible = false;
         }
     }
 }
