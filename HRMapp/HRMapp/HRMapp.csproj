@@ -112,7 +112,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="HRMDBDataSet.xsc">
       <DependentUpon>HRMDBDataSet.xsd</DependentUpon>
     </None>
