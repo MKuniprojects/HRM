@@ -1,7 +1,6 @@
 C:\Gitefo\HRM\HRMapp\HRMapp\bin\Debug\HRMapp.exe.config
 C:\Gitefo\HRM\HRMapp\HRMapp\bin\Debug\HRMapp.exe
 C:\Gitefo\HRM\HRMapp\HRMapp\bin\Debug\HRMapp.pdb
-C:\Gitefo\HRM\HRMapp\HRMapp\obj\Debug\HRMapp.Home.resources
 C:\Gitefo\HRM\HRMapp\HRMapp\obj\Debug\HRMapp.loginform.resources
 C:\Gitefo\HRM\HRMapp\HRMapp\obj\Debug\HRMapp.Properties.Resources.resources
 C:\Gitefo\HRM\HRMapp\HRMapp\obj\Debug\HRMapp.csproj.GenerateResource.Cache
@@ -11,3 +10,4 @@ C:\Gitefo\HRM\HRMapp\HRMapp\obj\Debug\HRMapp.ceoForm.resources
 C:\Gitefo\HRM\HRMapp\HRMapp\obj\Debug\HRMapp.dmform.resources
 C:\Gitefo\HRM\HRMapp\HRMapp\obj\Debug\HRMapp.csprojResolveAssemblyReference.cache
 C:\Gitefo\HRM\HRMapp\HRMapp\obj\Debug\HRMapp.ADDform.resources
+C:\Gitefo\HRM\HRMapp\HRMapp\obj\Debug\HRMapp.HRform.resources

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HRMapp
@@ -19,6 +12,7 @@ namespace HRMapp
         {
             InitializeComponent();
         }
+
         private void loginform_Load(object sender, EventArgs e)
         {
             flagUsername = true;
@@ -32,20 +26,19 @@ namespace HRMapp
             dm = 2,
             ceo = 3
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
             using (HRMDBDataSet ds = new HRMDBDataSet())
             {
                 using (HRMDBDataSetTableAdapters.UsersTableAdapter ta = new HRMDBDataSetTableAdapters.UsersTableAdapter())
                 {
                     ta.FillByNameAndPassword(ds.Users, textBoxUsername.Text, textBoxPassword.Text);
 
-
                     if (ds.Users.Count == 0)
                     {
+                        MessageBox.Show("Wrong input");
                         return;
-                        //MessageBox.Show("No user found");
                     }
                     else if (ds.Users.Count > 1)
                     {
@@ -56,11 +49,11 @@ namespace HRMapp
                     {
                         HRMDBDataSet.UsersRow userRow = ds.Users.Rows[0] as HRMDBDataSet.UsersRow;
                         int usersProfessionID = userRow.ProfessionID;
-                        
+
                         switch (usersProfessionID)
                         {
                             case (int)AccessLevels.hr:
-                                 Home f = new Home(userRow);
+                                HRform f = new HRform(userRow);
                                 this.Hide();
                                 f.Show();
                                 break;
@@ -83,13 +76,9 @@ namespace HRMapp
                                 MessageBox.Show("There was a problem on button1_Click function!!");
                                 break;
                         }
-
                     }
-
                 }
-
             }
-
         }
 
         private void ClickAndHide(TextBox txb, ref bool flag)
@@ -137,6 +126,5 @@ namespace HRMapp
             ClickAndHide(this.textBoxPassword, ref flagPassword);
             textBoxPassword.PasswordChar = '*';
         }
-
     }
 }

@@ -1,42 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HRMapp
 {
-    public partial class Home : Form
+    public partial class HRform : Form
     {
         public byte[] CurrentPhotoProfileByteArray { get; set; }
         private HRMDBDataSet.UsersRow thisUser;
         public short UserDpID { get; set; }
 
-
-        public Home()
+        public HRform()
         {
             InitializeComponent();
         }
 
-        public Home(HRMDBDataSet.UsersRow myUser)
+        private void Home_Load(object sender, EventArgs e)
+        {
+            profileImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            UserDpID = thisUser.DpID;
+            LoadData();
+            HRform f = new HRform();
+        }
+
+        public HRform(HRMDBDataSet.UsersRow myUser)
         {
             InitializeComponent();
             thisUser = myUser;
         }
 
-
-        void ShowProfileImage()
+        private void ShowProfileImage()
         {
             try
             {
                 DataRowView dview = bindingSource1.Current as DataRowView;
                 DataRow drow = dview.Row;
-                var imgbytes = drow["Photoprofile"] as Byte[];
+
+                var imgbytes = drow["Photoprofile"] as byte[];
                 if (imgbytes == null)
                 {
                     CurrentPhotoProfileByteArray = null;
@@ -53,15 +55,6 @@ namespace HRMapp
             {
                 throw;
             }
-
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-            profileImg.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.UserDpID = thisUser.DpID;
-            LoadData();
-            Home f = new Home();
         }
 
         private void LoadData()
@@ -70,31 +63,30 @@ namespace HRMapp
             {
                 using (HRMDBDataSet ds = new HRMDBDataSet())
                 {
-                    this.personsTableAdapter.FillBydp(ds.Persons, thisUser.DpID);
-                    this.departmentsTableAdapter.FillBydpname(ds.Departments, UserDpID);
+                    personsTableAdapter.FillBydp(ds.Persons, thisUser.DpID);
+                    departmentsTableAdapter.FillBydpname(ds.Departments, UserDpID);
                     hrmdbDataSet1.Merge(ds);
                 }
-                Department.Text ="Department: "+ hrmdbDataSet1.Departments.Rows[0]["Department"].ToString();
+                Department.Text = "Department: " + hrmdbDataSet1.Departments.Rows[0]["Department"].ToString();
                 ShowProfileImage();
             }
             catch (Exception)
             {
-                throw;
+                //throw;
             }
-
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             try
             {
-                this.bindingSource1.DataSource = this.hrmdbDataSet1;
+                bindingSource1.DataSource = this.hrmdbDataSet1;
                 DataRowView dview = bindingSource1.Current as DataRowView;
                 dview.Row["Photoprofile"] = CurrentPhotoProfileByteArray;//tobytearray in db
                 bindingSource1.EndEdit();
                 using (HRMDBDataSetTableAdapters.PersonsTableAdapter ta = new HRMDBDataSetTableAdapters.PersonsTableAdapter())
                 {
-                    ta.Update(this.hrmdbDataSet1.Persons);
+                    ta.Update(hrmdbDataSet1.Persons);
                     pictureBoxAccept.Visible = true;
                 }
             }
@@ -103,6 +95,7 @@ namespace HRMapp
                 throw;
             }
         }
+
         private void brs_Click(object sender, EventArgs e)
         {
             try
@@ -111,13 +104,11 @@ namespace HRMapp
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
+                        profileImg.Image = Image.FromFile(ofd.FileName);
+
                         byte[] imgdata = System.IO.File.ReadAllBytes(ofd.FileName);
 
                         CurrentPhotoProfileByteArray = imgdata;
-                        using (var ms = new MemoryStream(imgdata))
-                        {
-                            profileImg.Image = Image.FromStream(ms);
-                        }
                     }
                 }
             }
@@ -159,24 +150,15 @@ namespace HRMapp
         private void Logout_Click(object sender, EventArgs e)
         {
             LOGINform log = new LOGINform();
-            this.Hide();
+            Hide();
             log.Show();
-        }
-
-        private void dataGridViewDP_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            using (HRMDBDataSet ds = new HRMDBDataSet())
-            {
-                this.personsTableAdapter.FillBydp(ds.Persons, thisUser.DpID);
-            }
         }
 
         private void dataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             using (HRMDBDataSetTableAdapters.PersonsTableAdapter ta = new HRMDBDataSetTableAdapters.PersonsTableAdapter())
             {
-                ta.Update(this.hrmdbDataSet1.Persons);
-
+                ta.Update(hrmdbDataSet1.Persons);
             }
         }
 

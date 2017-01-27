@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HRMapp
@@ -15,20 +10,18 @@ namespace HRMapp
     {
         public byte[] CurrentPhotoProfileByteArray { get; set; }
         private HRMDBDataSet.UsersRow thisUsr;
-        public short UserDpID  { get; set; }
+        public short UserDpID { get; set; }
 
         public DMform()
         {
             InitializeComponent();
         }
 
-
         public DMform(HRMDBDataSet.UsersRow myUser)
         {
             //Constructor
             InitializeComponent();
             thisUsr = myUser;
-           
         }
 
         private void dmform_Load(object sender, EventArgs e)
@@ -37,18 +30,16 @@ namespace HRMapp
             LoadData();
             DMform f = new DMform();
             profile.SizeMode = PictureBoxSizeMode.StretchImage;
-
         }
 
         private void LoadData()
         {
-            
             try
             {
                 using (HRMDBDataSet ds = new HRMDBDataSet())
                 {
-                    this.personsTableAdapter.FillBydp(ds.Persons, thisUsr.DpID);
-                    this.departmentsTableAdapter1.FillBydpname(ds.Departments, UserDpID);
+                    personsTableAdapter.FillBydp(ds.Persons, thisUsr.DpID);
+                    departmentsTableAdapter1.FillBydpname(ds.Departments, UserDpID);
                     hRMDBDataSet.Merge(ds);
                 }
                 Departmentm.Text = "Department: " + hRMDBDataSet.Departments.Rows[0]["Department"].ToString();
@@ -56,12 +47,11 @@ namespace HRMapp
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
-        void ShowProfileImage()
+
+        private void ShowProfileImage()
         {
             try
             {
@@ -75,7 +65,6 @@ namespace HRMapp
                     return;
                 }
 
-
                 using (var ms = new MemoryStream(imgbytes))
                 {
                     profile.Image = Image.FromStream(ms);
@@ -84,17 +73,15 @@ namespace HRMapp
             }
             catch (Exception)
             {
-
-                throw;
+                //throw;
             }
-
         }
-        
+
         private void update_Click(object sender, EventArgs e)
         {
             try
             {
-               personsBindingSource.EndEdit();
+                personsBindingSource.EndEdit();
                 using (HRMDBDataSetTableAdapters.PersonsTableAdapter ta = new HRMDBDataSetTableAdapters.PersonsTableAdapter())
                 {
                     ta.Update(this.hRMDBDataSet.Persons);
@@ -102,19 +89,19 @@ namespace HRMapp
                 }
                 ShowProfileImage();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
-
             }
         }
 
         private void Logout_Click(object sender, EventArgs e)
         {
             LOGINform log = new LOGINform();
-            this.Hide();
+            Hide();
             log.Show();
         }
+
         private void personsBindingSource_CurrentChanged_1(object sender, EventArgs e)
         {
             ShowProfileImage();

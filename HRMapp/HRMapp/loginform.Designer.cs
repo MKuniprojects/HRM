@@ -83,7 +83,7 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // loginform
+            // LOGINform
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -101,9 +101,9 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "loginform";
+            this.Name = "LOGINform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Welcome to ";
+            this.Text = "Welcome";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.loginform_Load);
             this.ResumeLayout(false);

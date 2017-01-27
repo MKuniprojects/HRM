@@ -1,6 +1,6 @@
 ﻿namespace HRMapp
 {
-    partial class Home
+    partial class HRform
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HRform));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Logout = new System.Windows.Forms.Button();
             this.Department = new System.Windows.Forms.TextBox();
@@ -58,12 +58,6 @@
             this.profileImg = new System.Windows.Forms.PictureBox();
             this.btnempadd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
-            this.personsTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.PersonsTableAdapter();
-            this.departmentsTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.DepartmentsTableAdapter();
-            this.hRMDBDataSet = new HRMapp.HRMDBDataSet();
-            this.personsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +66,12 @@
             this.mailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
+            this.personsTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.PersonsTableAdapter();
+            this.departmentsTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.DepartmentsTableAdapter();
+            this.hRMDBDataSet = new HRMapp.HRMDBDataSet();
+            this.personsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccept)).BeginInit();
@@ -115,7 +115,7 @@
             this.Department.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Department.Enabled = false;
             this.Department.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Department.Location = new System.Drawing.Point(23, 20);
+            this.Department.Location = new System.Drawing.Point(23, 28);
             this.Department.Name = "Department";
             this.Department.Size = new System.Drawing.Size(344, 27);
             this.Department.TabIndex = 7;
@@ -335,7 +335,7 @@
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Evaluation", true));
             this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(17, 323);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -392,33 +392,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(344, 403);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
-            // 
-            // departmentsBindingSource
-            // 
-            this.departmentsBindingSource.DataMember = "Departments";
-            this.departmentsBindingSource.DataSource = this.hrmdbDataSet1;
-            // 
-            // usersTableAdapter1
-            // 
-            this.usersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // personsTableAdapter
-            // 
-            this.personsTableAdapter.ClearBeforeFill = true;
-            // 
-            // departmentsTableAdapter
-            // 
-            this.departmentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // hRMDBDataSet
-            // 
-            this.hRMDBDataSet.DataSetName = "HRMDBDataSet";
-            this.hRMDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // personsBindingSource
-            // 
-            this.personsBindingSource.DataMember = "Persons";
-            this.personsBindingSource.DataSource = this.hRMDBDataSet;
             // 
             // personIDDataGridViewTextBoxColumn
             // 
@@ -487,6 +460,33 @@
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
             this.genderDataGridViewTextBoxColumn.ReadOnly = true;
             this.genderDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // departmentsBindingSource
+            // 
+            this.departmentsBindingSource.DataMember = "Departments";
+            this.departmentsBindingSource.DataSource = this.hrmdbDataSet1;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // personsTableAdapter
+            // 
+            this.personsTableAdapter.ClearBeforeFill = true;
+            // 
+            // departmentsTableAdapter
+            // 
+            this.departmentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // hRMDBDataSet
+            // 
+            this.hRMDBDataSet.DataSetName = "HRMDBDataSet";
+            this.hRMDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // personsBindingSource
+            // 
+            this.personsBindingSource.DataMember = "Persons";
+            this.personsBindingSource.DataSource = this.hRMDBDataSet;
             // 
             // Home
             // 

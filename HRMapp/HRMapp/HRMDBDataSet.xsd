@@ -357,7 +357,7 @@ SELECT DpID, Department FROM Departments WHERE (DpID = @DpID)</CommandText>
   <xs:element name="HRMDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HRMDBDataSet" msprop:Generator_UserDSName="HRMDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Persons" msprop:Generator_TableClassName="PersonsDataTable" msprop:Generator_TableVarName="tablePersons" msprop:Generator_TablePropName="Persons" msprop:Generator_RowDeletingName="PersonsRowDeleting" msprop:Generator_RowChangingName="PersonsRowChanging" msprop:Generator_RowEvHandlerName="PersonsRowChangeEventHandler" msprop:Generator_RowDeletedName="PersonsRowDeleted" msprop:Generator_UserTableName="Persons" msprop:Generator_RowChangedName="PersonsRowChanged" msprop:Generator_RowEvArgName="PersonsRowChangeEvent" msprop:Generator_RowClassName="PersonsRow">
+        <xs:element name="Persons" msprop:Generator_TableClassName="PersonsDataTable" msprop:Generator_TableVarName="tablePersons" msprop:Generator_RowChangedName="PersonsRowChanged" msprop:Generator_TablePropName="Persons" msprop:Generator_RowDeletingName="PersonsRowDeleting" msprop:Generator_RowChangingName="PersonsRowChanging" msprop:Generator_RowEvHandlerName="PersonsRowChangeEventHandler" msprop:Generator_RowDeletedName="PersonsRowDeleted" msprop:Generator_RowClassName="PersonsRow" msprop:Generator_UserTableName="Persons" msprop:Generator_RowEvArgName="PersonsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnPersonID" msprop:Generator_ColumnPropNameInRow="PersonID" msprop:Generator_ColumnPropNameInTable="PersonIDColumn" msprop:Generator_UserColumnName="PersonID" type="xs:long" />
@@ -423,7 +423,7 @@ SELECT DpID, Department FROM Departments WHERE (DpID = @DpID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Professions" msprop:Generator_TableClassName="ProfessionsDataTable" msprop:Generator_TableVarName="tableProfessions" msprop:Generator_TablePropName="Professions" msprop:Generator_RowDeletingName="ProfessionsRowDeleting" msprop:Generator_RowChangingName="ProfessionsRowChanging" msprop:Generator_RowEvHandlerName="ProfessionsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfessionsRowDeleted" msprop:Generator_UserTableName="Professions" msprop:Generator_RowChangedName="ProfessionsRowChanged" msprop:Generator_RowEvArgName="ProfessionsRowChangeEvent" msprop:Generator_RowClassName="ProfessionsRow">
+        <xs:element name="Professions" msprop:Generator_TableClassName="ProfessionsDataTable" msprop:Generator_TableVarName="tableProfessions" msprop:Generator_RowChangedName="ProfessionsRowChanged" msprop:Generator_TablePropName="Professions" msprop:Generator_RowDeletingName="ProfessionsRowDeleting" msprop:Generator_RowChangingName="ProfessionsRowChanging" msprop:Generator_RowEvHandlerName="ProfessionsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfessionsRowDeleted" msprop:Generator_RowClassName="ProfessionsRow" msprop:Generator_UserTableName="Professions" msprop:Generator_RowEvArgName="ProfessionsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ProfessionID" msprop:Generator_ColumnVarNameInTable="columnProfessionID" msprop:Generator_ColumnPropNameInRow="ProfessionID" msprop:Generator_ColumnPropNameInTable="ProfessionIDColumn" msprop:Generator_UserColumnName="ProfessionID" type="xs:short" />
@@ -438,7 +438,7 @@ SELECT DpID, Department FROM Departments WHERE (DpID = @DpID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:short" />
@@ -469,7 +469,7 @@ SELECT DpID, Department FROM Departments WHERE (DpID = @DpID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Departments" msprop:Generator_TableClassName="DepartmentsDataTable" msprop:Generator_TableVarName="tableDepartments" msprop:Generator_TablePropName="Departments" msprop:Generator_RowDeletingName="DepartmentsRowDeleting" msprop:Generator_RowChangingName="DepartmentsRowChanging" msprop:Generator_RowEvHandlerName="DepartmentsRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentsRowDeleted" msprop:Generator_UserTableName="Departments" msprop:Generator_RowChangedName="DepartmentsRowChanged" msprop:Generator_RowEvArgName="DepartmentsRowChangeEvent" msprop:Generator_RowClassName="DepartmentsRow">
+        <xs:element name="Departments" msprop:Generator_TableClassName="DepartmentsDataTable" msprop:Generator_TableVarName="tableDepartments" msprop:Generator_RowChangedName="DepartmentsRowChanged" msprop:Generator_TablePropName="Departments" msprop:Generator_RowDeletingName="DepartmentsRowDeleting" msprop:Generator_RowChangingName="DepartmentsRowChanging" msprop:Generator_RowEvHandlerName="DepartmentsRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentsRowDeleted" msprop:Generator_RowClassName="DepartmentsRow" msprop:Generator_UserTableName="Departments" msprop:Generator_RowEvArgName="DepartmentsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DpID" msprop:Generator_ColumnVarNameInTable="columnDpID" msprop:Generator_ColumnPropNameInRow="DpID" msprop:Generator_ColumnPropNameInTable="DpIDColumn" msprop:Generator_UserColumnName="DpID" type="xs:short" />

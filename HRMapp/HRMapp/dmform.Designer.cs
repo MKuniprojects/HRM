@@ -56,9 +56,6 @@
             this.txtfname = new System.Windows.Forms.TextBox();
             this.profile = new System.Windows.Forms.PictureBox();
             this.dataGridViewdm = new System.Windows.Forms.DataGridView();
-            this.personsTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.PersonsTableAdapter();
-            this.usersTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
-            this.departmentsTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.DepartmentsTableAdapter();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +68,9 @@
             this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phonenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evaluationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personsTableAdapter = new HRMapp.HRMDBDataSetTableAdapters.PersonsTableAdapter();
+            this.usersTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.UsersTableAdapter();
+            this.departmentsTableAdapter1 = new HRMapp.HRMDBDataSetTableAdapters.DepartmentsTableAdapter();
             this.paneldm.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccept)).BeginInit();
@@ -319,6 +319,7 @@
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.personsBindingSource, "Evaluation", true));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(17, 323);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -370,18 +371,6 @@
             this.dataGridViewdm.RowTemplate.Height = 24;
             this.dataGridViewdm.Size = new System.Drawing.Size(344, 403);
             this.dataGridViewdm.TabIndex = 9;
-            // 
-            // personsTableAdapter
-            // 
-            this.personsTableAdapter.ClearBeforeFill = true;
-            // 
-            // usersTableAdapter1
-            // 
-            this.usersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // departmentsTableAdapter1
-            // 
-            this.departmentsTableAdapter1.ClearBeforeFill = true;
             // 
             // firstnameDataGridViewTextBoxColumn
             // 
@@ -478,6 +467,18 @@
             this.evaluationDataGridViewTextBoxColumn.Name = "evaluationDataGridViewTextBoxColumn";
             this.evaluationDataGridViewTextBoxColumn.ReadOnly = true;
             this.evaluationDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // personsTableAdapter
+            // 
+            this.personsTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // departmentsTableAdapter1
+            // 
+            this.departmentsTableAdapter1.ClearBeforeFill = true;
             // 
             // DMform
             // 

@@ -3,8 +3,6 @@ using System.Data;
 
 namespace HRMapp
 {
-
-
     partial class HRMDBDataSet
     {
         partial class PersonsDataTable
@@ -42,6 +40,7 @@ namespace HRMapp.HRMDBDataSetTableAdapters
         }
     }
 
-    public partial class UsersTableAdapter {
+    public partial class UsersTableAdapter
+    {
     }
 }
